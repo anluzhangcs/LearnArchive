@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zhang.mybatis.dao.BlogMapper">
+
+    <sql id="commonsql">
+        <if test="title1 != null">
+            title = #{title1}
+        </if>
+        <if test="author != null">
+            AND author = #{author}
+        </if>
+    </sql>
+
+    <select id="queryIf" resultType="blog">
+        select * from blog
+        <where>
+            <!--通过refid引入SQL片段-->
+            <include refid="commonsql"/>
+        </where>
+    </select>
+
+    <select id="queryChoose" resultType="blog">
+        select * from blog
+        <where>
+            <choose>
+                <when test="title != null">
+                    title = #{title}
+                </when>
+                <when test="author != null">
+                    AND author = #{author}
+                </when>
+                <otherwise>
+                    AND views > 9990
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+    <select id="queryForeach" resultType="blog" parameterType="map">
+        select * from blog
+        <where>
+            <!--
+            collection为要遍历的集合
+            item为要遍历的元素
+            open表示以什么开始
+            separator为分隔符
+            close表示以什么结束
+            通过item取出每一项进行拼接
+            -->id in
+            <foreach item="id" collection="ids"
+                     open=" (" separator="," close=")" >
+                #{id}
+            </foreach>
+        </where>
+    </select>
+
+</mapper>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>测试获取请求参数</title>
+</head>
+<body>
+<h1 align="center"></h1>
+
+<a th:href="@{/testServletAPI(username='zhangsan')}">测试获取请求参数--->Servlet API</a> <br/>
+<a th:href="@{/testFormalParam(username='lisi')}">测试获取请求参数--->控制器方法形参</a> <br/>
+<a th:href="@{/testFormalParamPlus(username='wangwu')}">测试获取请求参数--->控制器方法形参Plus</a> <br/>
+
+<form th:action="@{/testPojo}" method="post">
+    用户名:<input type="text" name="username" /> <br/>
+    密码:<input type="password" name="password" /> <br/>
+    爱好:<input type="checkbox" name="hobby" value="Java" />Java <br/>
+        <input type="checkbox" name="hobby" value="C"/> C <br/>
+        <input type="checkbox" name="hobby" value="C++"/>C++ <br>
+    <input type="submit" /> <br/>
+
+</form>
+
+<br/>
+
+<a th:href="@{/testRequestHeader}">测试获取请求头--->@RequestHeader注解</a> <br/>
+<a th:href="@{/testCookieValue}">测试Cookie信息--->@CookieValue注解</a> <br/>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--引入context,aop名称空间-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!--创建切入点所在类对象和增强类对象-->
+    <bean id="user" class="org.zhang.xml.User"></bean>
+    <bean id="userProxy" class="org.zhang.xml.UserProxy"></bean>
+
+    <!--配置AOP-->
+    <aop:config>
+        <!--1.配置切点.即要增强那个方法-->
+        <aop:pointcut id="p" expression="execution(* org.zhang.xml.User.login(..))"></aop:pointcut>
+
+        <!--2.配置切面.即将通知应用到切入点的过程
+            ref:增强类的路径
+        -->
+        <aop:aspect ref="userProxy">
+            <!--3.配置通知
+                pointcut-ref:应用到哪个切入点
+                method:用于增强的方法
+            -->
+            <aop:before pointcut-ref="p" method="before"></aop:before>
+        </aop:aspect>
+
+    </aop:config>
+
+</beans>

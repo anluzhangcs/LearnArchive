@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--1.配置BookDaoImpl-->
+    <bean id="bookDao" class="org.zhang.dao.impl.BookDaoImpl"></bean>
+
+    <!--2.配置Service层并注入Dao层-->
+    <bean id="bookService" class="org.zhang.service.BookService">
+        <!--
+        注:注入外部Bean,此时的外部是指bean标签的外部
+        ref:通过bookDao找到对应的id为ref值的bean标签
+        value:只能注入基本数据类型和String
+        -->
+        <property name="bookDao" ref="bookDao"></property>
+    </bean>
+
+</beans>

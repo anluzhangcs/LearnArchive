@@ -1,0 +1,33 @@
+
+#yaml可以使得配置层次更加清晰
+
+server:
+  port: 8081
+
+
+
+student:
+#对于字面量(string,number,boolean,date),直接k: v
+  name: '张三\naa'
+  age: 18
+  sex: 男
+  #时间的默认格式是yyyy/mm/dd,转换为java.util.Date
+  birth: 2001/02/18
+
+#对于单例数据,如数组、List、Set有两种形式
+#使用-，一个-表示一个值
+  hobby:
+    -baseball
+    -football
+    -basketball
+  #使用[v1,v2,v3...]，每个值用逗号隔开
+  friends: [小明,小红]
+
+#对于Map或者对象，可以分层或者使用{k1:v1,k2:v2}
+  info:
+    baby: [1,2,3]
+    youth: [21,22,34]
+
+  school:
+    name: 安陆一中
+    position: 安陆

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--注入复杂数据类型-->
+    <bean id="student" class="org.zhang.bean.Student">
+        <property name="arr">
+            <!--
+            使用array,list,set都可以注入单列数据,可以互换使用
+                value属性:适用于基本数据类型和String
+                ref属性:适用于array,list,set中还是引用数据类型
+            -->
+            <array>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </array>
+        </property>
+
+        <property name="list">
+            <array>
+                <value>zhangsan</value>
+                <value>lisi</value>
+                <value>wangwu</value>
+            </array>
+        </property>
+
+        <property name="set">
+            <list>
+                <!--ref属性用于集合中元素类型为引用数据类型-->
+                <ref bean="course1"></ref>
+                <ref bean="course2"></ref>
+                <ref bean="course3"></ref>
+            </list>
+        </property>
+
+        <property name="map" ref="maps"/>
+
+    </bean>
+
+    <bean id="course1" class="org.zhang.bean.Course" p:cname="Java"></bean>
+    <bean id="course2" class="org.zhang.bean.Course" p:cname="Mysql"></bean>
+    <bean id="course3" class="org.zhang.bean.Course" p:cname="C++"></bean>
+
+    <!--
+        抽取多个Bean的共同属性
+        注:要增加Spring util的名称空间后才能使用util工具抽取;
+           要设置id值,在bean内部property通过ref引用此id的util
+    -->
+    <util:map id="maps">
+        <!--map里面为entry,entry有key和value-->
+        <entry key="zhangsan" value="18"></entry>
+        <entry key="lisi" value="19"></entry>
+        <entry key="wangwu" value="20"></entry>
+    </util:map>
+
+
+</beans>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Welcome Demo4 {{请求参数处理}} </h3>
+
+<form method="get" action="/user">
+    <input type="submit" value="REST-GET"/>
+</form>
+
+<form method="post" action="/user">
+    <input type="submit" value="REST-POST"/>
+</form>
+
+<form method="post" action="/user">
+    <input type="hidden" name="_method" value="put"/>
+    <input type="submit" value="REST-PUT"/>
+</form>
+
+<form method="post" action="/user">
+    <input type="hidden" name="_method" value="delete"/>
+    <input type="submit" value="REST-DELETE"/>
+</form>
+
+<hr>
+<hr>
+<h2>相关注解</h2>
+<ul>
+    <li>@PathVariable
+        <a href="/book/1/zhangsan">测试@PathVariable</a>
+    </li>
+    <li>@RequestParam
+        <a href="/book?id=2&username=lisi">测试@ReqesutParam</a>
+    </li>
+    
+    <li>@RequestHeader @RequestBody @CookieValue
+        <form action="/book/1" method="post" content="application/json">
+            姓名<input type="text" name="username" id=""> <br>
+            爱好: 足球<input type="checkbox" name="hobby" value="football">
+             蓝球<input type="checkbox" name="hobby" value="basketball">
+             排球<input type="checkbox" name="hobby" value="baseball">
+            <br>
+            <input type="submit" value="提交">
+        </form>
+    </li>
+
+</ul>
+
+</body>
+</html>

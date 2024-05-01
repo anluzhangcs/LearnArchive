@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+        /*
+        *   数组
+        * 定义格式:
+        *   var 数组名 = [];
+        *   var 数组名 = [xxx,xxx];
+        *
+        * 特点:
+        *   -数组中数据类型可以不一样
+        *   -对数组赋值时若下标越界,则会自动扩容
+        * */
+        var arr = [];  //空数组
+        alert(arr.length);
+
+        arr[2] = 3;
+        alert(arr.length);
+
+        arr[9];
+        alert(arr.length);
+
+        for (var i = 0; i < arr.length; i++) {
+            alert(arr[i]);
+        }
+    </script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+        //动态绑定事件,onload事件在dom元素加载完成之后后自动执行
+        window.onload = function () {
+            //document对象可以获取当前页面的所有元素对象,通过id获取
+            var username = document.getElementById("username"); //获取输入框
+            var submit = document.getElementById("submit"); //获取提交按钮
+
+            //给按钮添加绑定事件,检查提交前是否合法
+            submit.onclick = function (ev) {
+                // 指定正则表达式
+                var patt = /^\w{5,12}$/; //表示5~12位,有数字、字母、下划线组成
+
+                //通过正则表达式的test函数检查是否符合
+                if (patt.test(username.value)) { //输入框对象的value属性就是输入框的值
+                    //如果符合,弹出提示现象,允许跳转
+                    alert("用户名合法");
+                    return true;
+                } else{
+                    alert("用户名不合法");
+                    return false;  //提交后不会跳转
+                }
+            }
+
+        }
+    </script>
+
+</head>
+<body>
+
+<form action="http://www.baidu.com">
+    <!--输入框-->
+    <input type="text" id="username" />
+
+    <!--提交按钮-->
+    <button type="submit" id="submit" >提交</button>
+
+</form>
+
+</body>
+</html>

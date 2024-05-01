@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--为UserMapper接口绑定配置文件.通过namespace命名空间指定,必须为全限定名-->
+<mapper namespace="org.zhang.mybatis.dao.UserMapper">
+    <!--
+    select标签表明这个一个查询操作,标签之间为sql语句
+    属性:
+        id通过方法名绑定方法
+        resultType根据方法返回类型指定类型,若返回类型为集合,则只需指定泛型类型
+            注:resultType必须为全限定名
+    -->
+    <select id="getAllUsers" resultType="org.zhang.mybatis.bean.User">
+    select * from user
+  </select>
+
+
+    <!--
+        id绑定映射器接口方法
+        parameterType为参数类型
+        resultType为返回值类型
+        标签之间为SQL语句
+        #{}为占位符
+    -->
+    <select id="getUserById"  resultType="org.zhang.mybatis.bean.User">
+        select * from user where id = #{idd};
+    </select>
+
+
+    <!--使用Map传参进行SQL注入 >>适用于需要多个参数
+        -此时会通过Map的键名与占位符的参数名匹配,并进行注入.
+        -Map的键名与占位符的参数名要一致才能注入成功
+    -->
+    <select id="getUserByIdAndName" parameterType="Map" resultType="org.zhang.mybatis.bean.User">
+        select * from user where id = #{userId} and username = #{userName};
+    </select>
+
+    <!--模糊查询-->
+    <select id="getUsersByLike" resultType="org.zhang.mybatis.bean.User">
+        select * from user where username like "%"#{name}"%";
+    </select>
+
+    <!--
+        insert添加标签
+        -没有返回类型.(大概是因为都是int)
+        -需要提交commit
+    -->
+    <insert id="addUser" parameterType="org.zhang.mybatis.bean.User">
+        insert into user(id,username,password) values(#{id},#{username},#{password});
+    </insert>
+
+
+    <!--
+        update更新标签
+        -parameterType为实体类,通过get读方法自动填充占位符,因此占位符的参数名须和实体类中对应
+    -->
+    <update id="updateUser" parameterType="org.zhang.mybatis.bean.User">
+        update user set username=#{username},password=#{password} where id=#{id};
+    </update>
+
+    <delete id="deleteUser" parameterType="Integer">
+        delete from user where id = #{idd};
+    </delete>
+
+</mapper>

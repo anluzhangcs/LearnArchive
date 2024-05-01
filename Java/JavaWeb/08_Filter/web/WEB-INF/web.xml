@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!--配置Filter过滤器-->
+    <filter>
+        <filter-username>AdminFilter</filter-username>
+        <filter-class>org.zhang.filter.AdminFilter</filter-class>
+        <!--filter的初始化参数-->
+        <init-param>
+            <param-username>user</param-username>
+            <param-value>root</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-username>AdminFilter</filter-username>
+        <!--
+            配置请求拦截路径
+            /代表http://ip:port/工程路径,映射到Idea web目录下
+            *代表该目录下的所有资源
+        -->
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-username>LoginServlet</servlet-username>
+        <servlet-class>org.zhang.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-username>LoginServlet</servlet-username>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+</web-app>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!--引入外部配置文件-->
+    <properties resource="db.properties"/>
+
+    <!--设置运行时的一些重要配置-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!--开启延迟加载-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!--关闭aggressiveLazyLoading,否则延迟加载无效.(新版本默认关闭)-->
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
+    <!--设置别名-->
+    <typeAliases>
+        <package name="org.zhang.mybatis.bean"/>
+    </typeAliases>
+
+    <!--环境配置-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--映射器注册-->
+    <mappers>
+        <package name="org.zhang.mybatis.dao"/>
+    </mappers>
+
+
+</configuration>

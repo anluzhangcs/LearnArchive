@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--Mybatis核心配置文件-->
+<configuration>
+    <!--引入外部资源-->
+    <properties resource="db.properties"/>
+
+    <!--设置Mybatis常用运行时行为-->
+    <settings>
+        <!--设置Mybatis所用日志具体实现为标准日志-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!--显示开启全局所有映射器配置文件中设置的缓存(如二级缓存,自定义缓存),默认已开启-->
+        <setting name="cacheEnabled" value="true"/>
+        <!--开启数据库经典列名自动转换为驼峰命名-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <!--设置类型别名,减少全限定名冗余-->
+    <typeAliases>
+        <package name="org.zhang.mybatis.bean"/>
+    </typeAliases>
+
+    <!--Mybatis环境配置-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--注册映射器-->
+    <mappers>
+        <package name="org.zhang.mybatis.dao"/>
+    </mappers>
+
+</configuration>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        Spring有两种bean.
+        1.普通bean.bean标签的class为什么类型,就返回什么类型
+        2.工厂bean(FactoryBean).需要类实现FactoryBean接口并重写方法.此时bean标签的class还是
+            为Bean的全类名,但是返回对象类型确实由类中的getObject方法决定
+    -->
+    <bean id="myBean" class="org.zhang.factorybean.MyBean"></bean>
+
+</beans>

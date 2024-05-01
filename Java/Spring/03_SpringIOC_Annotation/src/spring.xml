@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--使用注解创建bean实例,需要在spring配置文件中配置扫描包,告诉spring扫描该包下的所有类
+        为带有bean注解的类创建实例
+        -需要context名称空间
+        -如果有多个包 可以用,分隔 也可以扩大到上一级包(推荐)
+    -->
+    <context:component-scan base-package="org.zhang"></context:component-scan>
+
+
+    <!--
+        use-default-filter属性设置扫描过滤器:
+            true:使用默认过滤器,扫描该包下的所有类
+            false:不使用默认过滤器,自己觉得扫描哪些内容
+        context:include-filter标签自定义扫描过滤器,表示扫描哪些内容
+        注:use-default-filter="false"一般和context:include-filter搭配使用,表示
+        不扫描所有类,只扫描自己决定的内容
+
+    -->
+
+
+    <!--<context:component-scan base-package="org.zhang" use-default-filters="false">-->
+        <!--&lt;!&ndash;只扫描org.zhang包下注解类型为Controller的类&ndash;&gt;-->
+        <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+    <!--</context:component-scan>-->
+
+    <!--<context:component-scan base-package="org.zhang">-->
+        <!--&lt;!&ndash;扫描org.zhang包下所有的类,除了注解为Controller的类&ndash;&gt;-->
+        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+    <!--</context:component-scan>-->
+
+</beans>

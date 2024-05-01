@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zhang.mybatis.dao.UserMapper">
+
+    <resultMap id="UserMap" type="user">
+        <result property="pwd" column="password"></result>
+    </resultMap>
+
+    <select id="getAllUsers" resultMap="UserMap">
+    select id,username,password from user;
+    </select>
+
+
+    <!--
+        insert添加标签
+        -没有返回类型.(大概是因为都是int)
+        -需要提交commit
+    -->
+    <insert id="addUser" parameterType="org.zhang.mybatis.bean.User">
+        insert into user(id,username,password) values(#{id},#{username},#{password});
+    </insert>
+
+
+    <!--
+        update更新标签
+        -parameterType为实体类,通过get读方法自动填充占位符,因此占位符的参数名须和实体类中对应
+    -->
+    <update id="updateUser" parameterType="org.zhang.mybatis.bean.User">
+        update user set username=#{username},password=#{password} where id=#{id};
+    </update>
+
+    <delete id="deleteUser" parameterType="Integer">
+        delete from user where id = #{idd};
+    </delete>
+
+</mapper>

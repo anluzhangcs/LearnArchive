@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+        /*
+        * 通过var来定义变量 var 变量名 = 初始值;
+        *   -变量值的三者特殊值
+        *       没有初始化,undefined;
+        *       非数值型,NAN,not a number
+        *       空,null
+        * */
+        var i;
+        // alert(i); // undefined
+        i =1;
+        // alert(i);
+
+        i = 10 / "abc";
+        // alert(i);    //NAN
+
+    </script>
+
+    <script type="text/javascript">
+        /*
+        * 关系运算
+        *   相等运算符:==    只比较字面值
+        *   全等运算符:===   除了比较字面值,还比较数据类型
+        * */
+        alert(11 == "11");  //true
+        alert(11 === "11"); //false
+    </script>
+
+    <script type="text/javascript">
+        /*
+        * 逻辑运算符
+        *   &&(短路)
+        *       当全为真时,返回最后一个表达式的值
+        *       当有一个为假时,返回第一个为假的表达式的值
+        *
+        *   ||(短路)
+        *       当全为假时,返回最后一个表达式的值
+        *       当有一个为真时,返回第一个为真的表达式的值
+        *
+        * */
+        var a = true;
+        var b = null;
+        var c = undefined;
+        var d = "abc";
+
+        alert(a && d); //"abc"
+        alert(a && b); //null
+        alert(b || c); //undefined
+        alert(b || d); //"abc"
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

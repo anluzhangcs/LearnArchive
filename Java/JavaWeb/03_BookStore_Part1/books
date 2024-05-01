@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    <?xml version="1.0" encoding="utf-8" ?>为xml语言标识,每个xml文件都要有
+    version代表版本号
+    encoding代码此xml文件编码
+-->
+<books>
+    <!--
+        xml文件格式:如下所示
+
+      注意事项:
+        ①xml文件只有一个根元素
+        ②xml标签必须闭合
+    -->
+    <book sn="SN280397359">
+        <username>Java</username>
+        <price>9.99</price>
+        <author>张三</author>
+    </book>
+</books>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        使用bean标签来完成Spring创建对象
+        常用属性:
+            id:要创建类的唯一标识.getBean(String name)通过id来找到这个类
+            class:要创建类的全类名
+        注意:使用bean标签创建对象要求Bean对象要有无参构造器,否则报错
+    -->
+    <bean id="user" class="org.zhang.bean.User">
+        <property name="age" value="18"/>
+    </bean>
+
+
+    <bean id="student" class="org.zhang.bean.Student">
+        <!--
+        通过构造器注入属性
+            name:类的属性名
+            value:要注入的属性值
+        -->
+        <constructor-arg name="name" value="zhangsan"/>
+        <constructor-arg name="sex" value="male"/>
+    </bean>
+
+    <!--
+        通过set方法注入属性
+        name:类的属性名
+        value:要注入的属性值
+        -->
+    <bean id="order" class="org.zhang.bean.Order" >
+        <!--<property name="date">-->
+            <!--&lt;!&ndash;<null/>标签表示这个属性为空&ndash;&gt;-->
+            <!--<null/>-->
+        <!--</property>-->
+
+        <property name="date">
+            <!--特殊字符,用CDATA,CDATA里面为内容-->
+            <value><![CDATA[<<2002>>]]></value>
+        </property>
+        <!--<property name="price" value="88.8"/>-->
+    </bean>
+
+
+
+
+</beans>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        //静态绑定
+        function onclick1() {
+            alert("button1");
+        }
+
+        //动态绑定
+        window.onload = function (ev) {
+            var bt2 = document.getElementById("bt2");
+            bt2.onclick = function (ev1) {
+                alert("button2")
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+
+<button onclick="onclick1()">Button1</button>
+<button id="bt2">Button2</button>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+		<!--<script type="text/javascript" src="script/jquery-1.7.2.js"></script>-->
+		<script type="text/javascript">
+			// json的定义,值可以是任意类型。number,string,数组,对象,json...等等
+			var jsonObj = {"key1":11,"key2":"abc","key3":[22,"wer"],
+			};
+
+			// json的访问
+            // alert(jsonObj); //Object类型
+            // alert(jsonObj.key1); //11
+            // alert(jsonObj.key2); //abc
+            // alert(jsonObj.key3[1]) //wer
+
+			// json对象转字符串,调用JSON的stringify方法
+            var jsonString = JSON.stringify(jsonObj);
+            alert(jsonString);
+
+			// json字符串转json对象,调用JSON的parse方法
+            var jsonObj2 = JSON.parse(jsonString);
+
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

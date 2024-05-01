@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zhang.mybatis.dao.TeacherMapper">
+
+    <!--一对多处理方式1:查询嵌套(子查询)
+        ①通过参数单表查询指定tno的teacher
+        ②结果集映射,对于实体类的集合属性使用collection
+            映射到集合属性students上,通过tno继续查询该老师的所有学生
+            ofType为集合中泛型类型
+    -->
+    <select id="getTeacherInfo1" resultMap="TeacherInfo1">
+        select * from teacher where tno = #{tno}
+    </select>
+
+    <resultMap id="TeacherInfo1" type="Teacher">
+        <result property="tno" column="tno"/>
+        <collection property="students" column="tno" ofType="student" select="getStudent"/>
+    </resultMap>
+
+    <select id="getStudent" resultType="student">
+        select * from student where tid = #{tno}
+    </select>
+
+    <!--一对多处理方式2:结果嵌套-->
+    <select id="getTeacherInfo2" resultMap="TeacherInfo2">
+        select tno,tname,sno,sname from teacher,student where #{tno} = tno and tno = tid
+    </select>
+    <resultMap id="TeacherInfo2" type="teacher">
+        <result property="tno" column="tno"/>
+        <result property="tname" column="tname"/>
+        <!--javaType为该属性类型,ofType为集合中泛型类型-->
+        <collection property="students" javaType="ArrayList" ofType="student">
+            <result property="sno" column="sno"/>
+            <result property="sname" column="sname"/>
+            <result property="tid" column="tno"/>
+        </collection>
+    </resultMap>
+
+</mapper>

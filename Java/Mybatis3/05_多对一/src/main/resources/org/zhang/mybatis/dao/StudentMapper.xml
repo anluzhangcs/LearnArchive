@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zhang.mybatis.dao.StudentMapper">
+
+    <!--多对一查询方式1:根据查询嵌套处理(相当于子查询)
+        ①首先查询所有学生信息
+        ②在resultMap结果集映射中进行匹配.
+            注:多对一关系使用association关联
+        ③在结果集中通过查询到的结果在其他表中查询
+    -->
+    <select id="getStudent1" resultMap="StuAndTea">
+        select * from student
+    </select>
+    <resultMap id="StuAndTea" type="student">
+        <result property="sno" column="sno"/>
+        <result property="sname" column="sname"/>
+        <association property="teacher" column="tid" javaType="Teacher" select="getTeacher"/>
+    </resultMap>
+    <!--根据student查询到的tid再来查询teacher并赋值给Student的teacher属性-->
+    <select id="getTeacher" resultType="teacher">
+        select * from teacher where tno = #{tid}
+    </select>
+
+    <!--
+    多对一查询方式2:根据结果嵌套查询(相当于联表查询)
+        ①直接联表查询出结果
+        ②对结果集进行映射
+    -->
+    <select id="getStudent2" resultMap="StuAndTea2">
+        select sno,sname,tname from student,teacher where tid = tno
+    </select>
+    <resultMap id="StuAndTea2" type="student">
+        <!--注意联表查询的结果集每一列都需要映射,即使属性名和列名一致-->
+        <result property="sno" column="sno"/>
+        <result property="sname" column="sname"/>
+        <association property="teacher" javaType="teacher">
+            <result property="tname" column="tname"/>
+        </association>
+    </resultMap>
+
+
+</mapper>

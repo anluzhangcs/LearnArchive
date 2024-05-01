@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        bean的作用域,通过scope属性设置,默认值为singleton
+        singleton: 表示创建单个实例.ApplicationContext加载配置文件时即会创建这个单例对象
+        prototype:表示创建多个实例.ApplicationContext加载配置文件时不会创建对象,在getBean时才创建
+    -->
+    <bean id="course" class="org.zhang.bean.Course" scope="singleton">
+        <property name="cname" value="Python"/>
+    </bean>
+
+</beans>

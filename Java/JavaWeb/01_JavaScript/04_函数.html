@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--<script type="text/javascript">-->
+        <!--/*-->
+        <!--* 函数定义的两种方式-->
+        <!--*   方式1: 通过function关键字-->
+        <!--*   方式2:将函数赋值给变量-->
+        <!--* */-->
+
+        <!--var fun1 = function(n1, n2) { //形参不用指明类型,因为类型可变-->
+            <!--return n1 +n2;  //若有返回值,直接return-->
+        <!--};-->
+
+        <!--// function fun1() {-->
+        <!--//     alert("");-->
+        <!--// }-->
+        <!--function fun1() {-->
+            <!--alert("funck");-->
+        <!--}-->
+        <!--fun1(); //拼串 3abc-->
+    <!--</script>-->
+
+    <script type="text/javascript">
+        /*
+        * js中函数都有隐形形参arguments,类似于java的可变长参数
+        *   arguments.length具有长度属性,传几个参数就有多长
+        *
+        *   ==>这样就导致在js函数中声明参数其实没有多大意义,带上参数可能让函数更易读.
+        *       -这样函数也就不具备重载了,因为类型可变,长度可变,所有的同名函数就是同一个函数,
+        *       后面的函数会覆盖前面的
+        *       -
+        * */
+        var f=function () {
+            var len = arguments.length;
+            alert(len);
+        }
+
+        function f(){
+            alert("ad");
+        }
+
+        f();
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

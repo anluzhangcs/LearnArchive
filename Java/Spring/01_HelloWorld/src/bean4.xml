@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--级联赋值第一种写法-->
+    <!--<bean id="employee" class="org.zhang.bean.Employee">-->
+        <!--<property name="ename" value="lisi"/>-->
+        <!--<property name="gender" value="female"/>-->
+        <!--<property name="dept" ref="dept" ></property>-->
+    <!--</bean>-->
+    <!--<bean id="dept" class="org.zhang.bean.Department">-->
+        <!--<property name="dname" value="会计部"/>-->
+    <!--</bean>-->
+
+    <!--级联赋值第二种写法-->
+    <bean id="employee" class="org.zhang.bean.Employee">
+        <!--设置两个普通属性-->
+        <property name="ename" value="lucy"></property>
+        <property name="gender" value="女"></property>
+
+        <property name="dept" ref="dept"></property>
+        <!--要求外部bean对象有内部bean对象相应属性的读方法-->
+        <property name="dept.dname" value="技术部"></property>
+
+    </bean>
+    <bean id="dept" class="org.zhang.bean.Department">
+    </bean>
+</beans>

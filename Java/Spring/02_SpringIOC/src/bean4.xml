@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置后置处理器.
+        -Spring创建它的对象时,看到了它实现了BeanPostProcessor接口,就知道它是后置处理器
+        -Spring会为所有配置过的bean对象都应用此后置处理器.bean对象会传入它的两个方法,执行后返回.
+    -->
+    <bean id="myPostBean" class="org.zhang.lifetime.MyPostBean"></bean>
+
+    <!--
+        init-method:配置初始化方法
+        destory-method:配置销毁时执行的方法
+    -->
+    <bean id="order" class="org.zhang.lifetime.Order" init-method="init" destroy-method="destory">
+        <property name="oName" value="zhangsan"/>
+    </bean>
+
+</beans>

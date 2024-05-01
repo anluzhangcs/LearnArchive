@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--
+    JavaScript是一个脚本语言,可以运行在浏览器上(浏览器的内核就是js解释器),也可以运行在JVM中.
+    JavaScript一般实现html页面和用户间的交互.
+
+      1.  Java和JavaScript???
+        -Java和JavaScript之间没有任何关系
+        -Java是一门强语言,即变量类型一旦定义就不可改变
+        -JavaScript是弱语言,变量用var定义,类型可以改变.
+
+      2.  如何在html页面中使用JavaScript???
+        -在head或者body标签中
+            <script type="text/javascript">
+                js代码...
+            </script>
+        -通过src属性引入外部script文件
+            <script type="text/javascript" src=""></script>
+    -->
+    <script type="text/javascript" src="test.js">
+        //引入的外部js文件会覆盖标签内部的代码.二者一般不同时写
+        alert("fuck...");
+    </script>
+
+</head>
+    <body>
+        <script type="text/javascript">
+            //alert()弹出函数
+            alert("hello javascript!");
+        </script>
+    </body>
+</html>

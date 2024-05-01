@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--注入内部bean-->
+    <bean id="employee" class="org.zhang.bean.Employee">
+        <property name="ename" value="zhangsna"/>
+        <property name="gender" value="male"/>
+        <property name="dept">
+            <!--property标签里也可以放bean-->
+            <bean id="depta" class="org.zhang.bean.Department">
+                <property name="dname" value="安保部"/>
+            </bean>
+        </property>
+    </bean>
+
+
+
+</beans>

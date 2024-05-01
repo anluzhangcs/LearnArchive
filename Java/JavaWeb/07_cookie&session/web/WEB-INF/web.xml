@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    
+    <servlet>
+        <servlet-username>CookieServlet</servlet-username>
+        <servlet-class>org.controller.CookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-username>CookieServlet</servlet-username>
+        <url-pattern>/cookie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-username>LoginServlet</servlet-username>
+        <servlet-class>org.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-username>LoginServlet</servlet-username>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-username>SessionServlet</servlet-username>
+        <servlet-class>org.controller.SessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-username>SessionServlet</servlet-username>
+        <url-pattern>/session</url-pattern>
+    </servlet-mapping>
+    <!--配置当前工程的session-->
+    <session-config>
+        <!--设置超时时长为20分钟-->
+        <session-timeout>20</session-timeout>
+    </session-config>
+
+</web-app>

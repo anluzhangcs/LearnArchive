@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dept" class="org.zhang.autowire.Dept">
+        <property name="dname" value="kuaiji"/>
+    </bean>
+
+    <!--
+        自动装配,通过autowire属性实现
+            byName:通过属性名称,要求要装配的bean标签id名要和属性名一样
+            byType:通过属性类型,要求该类型的bean标签只有一个,否则会找不到
+    -->
+    <bean id="emp" class="org.zhang.autowire.Employee" autowire="byName"></bean>
+</beans>

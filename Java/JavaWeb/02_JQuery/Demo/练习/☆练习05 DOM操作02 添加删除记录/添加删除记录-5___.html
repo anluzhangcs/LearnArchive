@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="styleB/css.css" />
+<script type="text/javascript" src="../../script/jquery-1.7.2.js"></script>
+	<script type="text/javascript">
+
+
+		$(function () {
+            var $empTable = $("#employeeTable"); //获取table表
+
+            //点击提交增加记录
+            $("#addEmpButton").click(function () {
+
+                var username = $("#empName").val();
+                var email = $("#email").val();
+                var salary = $("#salary").val();
+                $("<tr><td>" + username + "</td><td>" + email + "</td><td>" + salary + "</td><td><a href='#'>Delete</a></td></tr>").appendTo($empTable);
+
+                $("a:last").click(function () {
+                $(this).parent().parent().remove();
+                });
+            });
+
+            //点击删除删除记录
+			$("a").click(function () {
+
+
+			    //提示框,confirm是jQuery提供的确认提示框函数
+				confirm("你确定要删除["+$("#employeeTable>tr:last>td:first").text()+"]吗")
+
+			    //this指向当前dom元素,将this转化为jQuery对象,获取所在的行,进行删除
+				$(this).parent().parent().remove();
+            });
+        });
+
+	</script>
+</head>
+<body>
+
+	<table id="employeeTable">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Salary</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td>Tom</td>
+			<td>tom@tom.com</td>
+			<td>5000</td>
+			<td><a href="#">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Jerry</td>
+			<td>jerry@sohu.com</td>
+			<td>8000</td>
+			<td><a href="#">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Bob</td>
+			<td>bob@tom.com</td>
+			<td>10000</td>
+			<td><a href="#">Delete</a></td>
+		</tr>
+	</table>
+
+	<div id="formDiv">
+	
+		<h4>添加新员工</h4>
+
+		<table>
+			<tr>
+				<td class="word">username: </td>
+				<td class="inp">
+					<input type="text" username="empName" id="empName" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">email: </td>
+				<td class="inp">
+					<input type="text" username="email" id="email" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">salary: </td>
+				<td class="inp">
+					<input type="text" username="salary" id="salary" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button id="addEmpButton" value="abc">
+						Submit
+					</button>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+</body>
+</html>

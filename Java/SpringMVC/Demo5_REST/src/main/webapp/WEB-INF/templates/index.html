@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+
+<a th:href="@{/user}">查询所有用户 --> GET</a> <br/>
+<a th:href="@{/user/1}">根据id查询用户 --> GET</a> <br/>
+
+<form th:action="@{/user}" method="post">
+    用户名:<input type="text" name="username"> <br/>
+    密码:<input type="password" name="password"><br/>
+    <input type="submit" value="保存"/>
+</form>
+<br/>
+
+<!--
+    实现PUT或者DELETE请求
+    ①原请求方式必须是post.因此需要一个form表单,且method为post
+    ②必须要有一个隐藏域hidden,且参数名为_method,value值即为要替换原请求方式
+-->
+<form th:action="@{/user}" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    用户名:<input type="text" name="username"> <br/>
+    密码:<input type="password" name="password"><br/>
+    <input type="submit" value="更新"/>
+</form>
+<br/>
+
+
+
+
+</body>
+</html>

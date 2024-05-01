@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+        /*
+        * 自定义对象类型
+        *   -使用var obj = new Object();
+        *   -使用var obj = {};
+        *
+        * 调用对象方法或属性
+        *   对象名.属性名
+        *   对象名.方法名()
+        * */
+
+        var obj1 = new Object();
+        obj1.username = "张三"; //直接定义属性并赋值
+        obj1.age = 18;
+        obj1.fun = function () { //直接声明方法并赋值给成员变量
+            alert("username="+this.age+",age = "+this.age); //在对象中通过this调用属性或方法
+        }
+        obj1.eat = function () {
+            this.fun();
+        }
+
+        var obj2 = {
+            username: "李四",  //使用成员:值来声明成员并赋值 使用,相隔
+            age:24,
+            fun:function () {
+                alert("username=" + this.age + ",age = " + this.age);
+            } //最后一个成员后不加, 表示成员声明已结束
+        };
+
+
+        alert(obj1.age); //调用对象的方法和属性
+        obj1.fun();
+
+        obj2.fun();
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
