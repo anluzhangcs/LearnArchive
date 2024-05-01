@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <!-- 
+        Vue注册单击事件:
+        写法: v-on:click = "xxx" 或者 @click = "xxx"
+        -每个事件都有事件对象event
+        -一般格式函数为Vue托管,this也指向Vue实例即vm
+        -箭头式函数的this会向外指向Window,因此箭头式函数一般不用
+        -回调函数需声明在methods中,最后会添加到vm中
+
+         注意:
+         ①当函数不传参数时,会隐式传递一个event事件对象参数.可以写为fun或fun()
+         ②当函数需要传参时,则event事件对象需要占位符,否则不会传入.函数可写为fun($event,...)
+     -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        <button v-on:click="showInfo1">{{welcome1}}</button>
+        <button @click="showInfo2($event,66)">{{welcome2}}</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+
+        new Vue({
+            el:'#demo',
+            data(){
+                return {
+                    welcome1:'Welcome1',
+                    welcome2:'Welcome2'
+                }
+            },
+            methods:{
+                showInfo1(event){
+                    console.log(event.target) //target指向该事件执行的目标元素
+                    console.log(this)  //this指向Vue实例
+                    alert('Welcome1')
+                },
+                showInfo2(event,number){
+                    console.log(this)
+                    console.log(event.target)
+                    console.log(number)
+                    alert('Welcome2')
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

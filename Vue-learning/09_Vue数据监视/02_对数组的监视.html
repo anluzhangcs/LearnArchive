@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <!-- Vue对数组的监视
+        数组有响应式更新,但对于数组中的元素是没有响应式更新的.
+        ==>直接通过数组下标更改数据时,数组是被改变了,但页面不会更新
+        硬要更新方式:
+            Vue.set或者vm.$set(target,key,value).target为要更新的数组,key为下标,value为更新值
+     -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        <ul>
+            <li v-for="h in hobby">{{h}}</li>
+        </ul>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        const vm = new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    hobby:['抽烟','喝酒','烫头']
+                }
+            },
+        })
+    </script>
+</body>
+</html>

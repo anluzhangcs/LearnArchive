@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+
+        const school = Vue.extend({
+            template:`<div></div>`,
+            data() {
+                return {
+                    
+                }
+            },
+        })
+
+        console.log(school.prototype.__proto__ === Vue.prototype)
+
+        const vm = new Vue({
+            el:'#demo',
+            
+        })
+    </script>
+</body>
+</html>

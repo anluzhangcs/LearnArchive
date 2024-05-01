@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <!-- 事件修饰符
+        prevent : 阻止元素的默认行为 原生:event.preventDefault()   常用
+        stop : 阻止事件向上冒泡  原生:event.stopPropagation()      常用
+        once : 事件只触发一次                                      常用
+        capture : 使事件在捕获阶段就执行
+            事件执行过程: 先由外而内捕获事件 ==> 由内而外冒泡执行
+        self : 只有当事件对象(event.target)是自己时才会执行回调函数
+        passive : 不等回调函数执行完成,立即执行事件的默认行为
+
+        注意:事件修饰符也是可以连写的.如@click.prevent.stop 表示既阻止默认行为也阻止冒泡
+    -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+    <style>
+        .list{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            overflow: scroll;
+        }
+        li{
+            margin-top: 10px;
+            background-color: #bfa;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo">
+
+        <h3 >prevent : 阻止元素的默认行为</h3>
+        <a :href="url" @click.prevent="showInfo">点击去百度</a>
+        <hr/>
+
+        <h3>stop : 阻止事件向上冒泡</h3>
+        <div class="outer" @click="showInfo">
+            <button @click="showInfo">Button</button>
+        </div>
+        <hr>
+
+        <h3>once : 事件只触发一次</h3>
+        <button @click.once="showInfo">once</button>
+        <hr>
+
+        <h3>capture : 事件在捕获阶段执行回调函数</h3>
+        <div class="box1" @click.capture="showMsg(1)">
+            <button @click="showMsg(2)">capture</button>
+        </div>
+        <hr>
+
+        <h3>self : 只有当事件对象(event.target)是自己时才会执行回调函数</h3>
+        <div class="else" @click.self="showInfo">
+            <button @click="showInfo">self</button>
+        </div>
+        <hr>
+
+        <h3>passive : 不等回调函数执行完成,直接执行事件的默认行为</h3>
+        <!-- 
+            @scroll : 上下键或滑动滚动条触发事件
+            @wheel : 鼠标滚动事件
+         -->
+        <ul @wheel.passive="foo" class="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        new Vue({
+            el:'#demo',
+            data(){
+                return {
+                    desc : '事件修饰符',
+                    url:'http://www.baidu.com'
+                }
+            },
+            methods:{
+                showInfo(event){
+                    // event.preventDefault()
+                    // event.stopPropagation()
+                    alert('Hello Vue !!!')
+                    
+                },
+                showMsg(value){
+                    console.log(value)
+                },
+
+                foo(){
+                    for (let i = 0; i < 100000; i++) {
+                        console.log('@@ :>> ', i);
+                    }
+                }
+            }
+            
+        })
+
+    </script>
+
+</body>
+</html>

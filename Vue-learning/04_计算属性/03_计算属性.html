@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <!-- 计算属性(本质上还是属性,属于vm实例)
+        定义:vm中没有的属性,可通过现有属性计算而来
+        好处:   ①避免{{}}中复杂的js表达式
+                ②相比于函数,计算属性有缓存机制,便于复用
+        原理:使用了Object.defineProperty()方法
+        实现:
+        computed{
+            xxx:{
+                注:
+                ①get方法在第一次读取该属性和该属性所依赖的数据被修改时调用
+                ②get方法是必须的
+                ③get方法的this指向vm实例
+                get(){
+                    return xxx
+                },
+
+                注:
+                ①当该属性需要被修改时,可以添加set方法.set方法不是必须的
+                ②使用修改的值要修改所依赖的数据,否则页面还是不会变化没有意义.
+                set(value){
+
+                }
+            }
+
+        }
+     -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        姓:<input type="text" v-model="firstName"> <br>
+        名:<input type="text" v-model="lastName"> <br>
+        全名: <h1>{{fullName}}</h1>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el:'#demo',
+            data(){
+                return{
+                    firstName:'zhang',
+                    lastName:'san'
+                }
+            },
+
+            computed:{  //计算属性声明
+                fullName:{
+                    get(){
+                        return this.firstName + '-' + this.lastName
+                    },
+                    set(value){
+                        const arr = value.split('-')
+                        this.firstName = arr[0]
+                        this.lastName =  arr[1]
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

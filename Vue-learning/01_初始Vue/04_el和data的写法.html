@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--总结 
+        绑定容器 el 和通过$mount挂载 都可以使用,挂载较为灵活
+        data的书写一般会使用函数式写法(注意,只能使用一般函数,而不能使用=>式函数,否则this是Window不是Vue)
+     -->
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <div id="demo">
+        <h2>你好 {{name}}</h2>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        // 第一种方式
+        // new Vue({
+        //     el:'#demo', //el通过元素选择器指定
+        //     data:{  //data以对象的方式
+        //         name:'zhangsan'
+        //     },
+        // })
+
+        //第二种方式
+        const v = new Vue({
+            // data: function() {  //data使用函数的方式
+            //     console.log(this) //Vue托管的函数this指向的是Vue实例
+            //     return {
+            //         name: 'zhangsan',
+            //     };
+            // },
+
+            // data: () => {  //不用
+            //     console.log(this)
+            //     return{
+            //         name : 'zhangsan'
+            //     }
+            // }
+            
+            data() {  //简写方式
+                return {
+                    name: 'zhangsan',
+                };
+            },
+
+        })
+        
+        v.$mount('#demo') //通过Vue实例取到$mount挂载容器demo
+
+    </script>
+
+</body>
+</html>

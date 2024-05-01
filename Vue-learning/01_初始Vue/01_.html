@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <!-- 注意事项
+        ①引入vue.js需要在使用vue之前
+        ②Vue实例的创建要在其绑定容器之后(原因:如果js脚本在dom元素前面,则js脚本先加载,el找不到相应的dom元素,从而报错)
+        ③vscode中Vue代码提示需要安装Vuter和Vue2 Snippets插件
+
+        总结:
+        ①容器和Vue实例为一一对应.即一个容器只能对应一个Vue实例,一个Vue实例只能为一个容器服务
+        ②容器实际上是一个Vue模板
+        ③{{}}中只能为js表达式(包括函数的调用,对象的创建,运算赋值等等)
+                js表达式和js语句的区分
+                -js表达式会产生一个值
+                    1+1;a++;new foo();foo.call();
+                -js语句:表示一个逻辑行为,如if,for语句    
+                表达式可以替换语句,即表达式语句;而语句不能用来做表达式
+                    a > b ? true:false 就可以替换掉一个if语句,但反过来是不行的.
+        ④{{}}中的数据变化,页面也会动态变化
+
+     -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js" type="text/javascript"></script>
+    <title></title>
+</head>
+<body>
+    <!-- 提供一个容器 -->
+    <div class="root">
+        <!-- {{}}用于取出Vue的数据 -->
+        <h3>Hello !!! {{name}}</h3>
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false; //通过使用Vue.config全局配置对象去除Vue开发模式下提示
+
+        // 创建一个Vue实例<--使用Vue的前提
+        const x = new Vue({ //{}为创建此Vue实例的配置,为一个一个键值对\,用,分割
+            el: ".root", //通过元素选择器指定Vue要为哪个容器服务
+            data:{name:'Vue123'} //data为数据,供el指定的容器使用
+            
+        })
+    </script>
+</body>
+</html>

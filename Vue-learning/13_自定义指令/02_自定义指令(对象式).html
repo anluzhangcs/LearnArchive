@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        <!-- 实现打开时自动聚焦 -->
+        <input type="text" v-focus = "n">
+        <button @click="n++">点击加1</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    n:1
+                }
+            },
+            directives:{
+                focus:{ //对象式是自定义指令的完整配置
+                    //在指令和元素绑定时进行调用
+                    bind(el,binding){
+                        el.value = binding.value
+                    },
+
+                    //在该指令绑定元素插入到页面之后使用
+                    inserted(el){
+                        el.focus()
+                    },
+
+                    //在指令所在Vue模板被重新解析后调用
+                    update(el,binding){
+                        el.value= binding.value
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

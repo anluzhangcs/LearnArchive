@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+
+    <div id="demo">
+        姓: <input type="text" placeholder="" v-model="firstName"> <br>
+        名: <input type="text" placeholder="" v-model="lastName">  <br>
+        全名 <h3>{{firstName}}-{{lastName}}</h3>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        new Vue({
+            el:'#demo',
+            data(){
+                return {
+                    firstName:'zhang',
+                    lastName:'san'
+                }
+            }
+        })
+    </script>
+<body>
+</body>
+</html>

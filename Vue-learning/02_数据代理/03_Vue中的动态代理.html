@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <!-- 
+        Vue中的动态代理
+        -通过vm来操作data中的数据
+
+        原理:
+        ①将data读取到vm的_data,并通过Object.defineProperty()为vm增加上data的属性
+        ②vm为新增加的属性添加getter,setter方法
+        ③当vm读取属性时,会调用getter方法,getter方法返回data中的属性值; 
+        当vm写该属性时,会调用setter方法,写的值会赋值给data中的该属性,页面也会随之更新
+     -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        {{name}}
+        <br/>
+        {{address}}
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+
+        const vm = new Vue({
+            el:'#demo',
+            data(){
+                return{
+                    name:'zhansan',
+                    address:'ctgu'
+                }
+            } 
+        })
+    </script>
+</body>
+</html>

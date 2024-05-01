@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <!-- 条件渲染
+        v-show指令
+            写法:v-show="xxx" xxx为表达式,返回true或者false
+            原理:为为此元素添加style="display:none"
+            优势:相比于v-if更高效
+
+        v-if指令集(v-if,v-if-esle,v-else若要用则不能分开)
+            写法:v-if="xxx",xxx为表达式,返回true或者false
+            原理:直接删掉该元素节点
+            优势:不高效,但可以配置template标签使用条件渲染一群元素
+     -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+
+        <h3 v-show="1">v-show为true时显示</h3>
+        <button @click="n++">{{n}}</button>
+
+        <h3 v-if="n===1">n=====1</h3>
+        <h3 v-else-if="n===2">n=====2</h3>
+        <h3 v-else-if="n===3">n=====3</h3>
+        <h3 v-else>n=====4</h3>
+
+        <!-- template标签被渲染后就消失,不会影响其他结构.且如果使用条件渲染,只能配合v-if -->
+        <template v-if="n===1">
+            <h3>12345</h3>
+            <h3>12345</h3>
+            <h3>12345</h3>
+        </template>
+
+
+    </div>
+    <script>
+            Vue.config.productionTip = false
+            new Vue({
+                el:'#demo',
+                data() {
+                    return {
+                        n:0,
+                    }
+                },
+            })
+        </script>
+</body>
+</html>

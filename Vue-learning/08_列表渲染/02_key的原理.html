@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+    <!-- key
+        key是用来在数据更新时,虚拟DOM之间进行diff(对比算法)的依据.
+            当旧的虚拟DOM中有这个key:比较
+                -内容相同的部分:对真实DOM进行复用(提高效率)
+                -内容不相同的部分:进行更新(patch)
+
+            当旧的虚拟DOM没有这个key:直接生成新的真实DOM元素
+        
+            特别注意:当DOM元素中有输入类子元素(如input),key以数组index作为标识时,
+                当数组的顺序改变,页面数据会发生错误.
+        
+        ==>key最好用唯一标识
+            
+
+    -->
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        <h3>key的原理和作用</h3>
+        <ul>
+            <li v-for="p in persons" :key="p.id">
+                {{p.name}}-{{p.age}}
+                <input type="text">
+            </li>
+        </ul>
+        <button @click="addPerson">添加一个人</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    persons:[
+                        {id:'001',name:'zhangsan',age:'18'},
+                        {id:'002',name:'lisi',age:'19'},
+                        {id:'003',name:'wangwu',age:'20'}
+                    ],
+                }
+            },
+            methods:{
+                addPerson(){
+                    //unshift向数组最前面追加数据
+                    this.persons.unshift({id:'004',name:'zhaohu',age:'21'})
+                }
+            }
+        })
+    </script>
+</body>
+</html>

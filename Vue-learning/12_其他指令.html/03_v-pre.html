@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <!-- v-once
+        功能:对于使用此指令的元素,其只进行一次动态渲染数据后,就将其作为静态数据处理
+
+        v-pre:
+        功能:跳过Vue对其进行模板解析,加快加载.适用于没有使用Vue数据和指令
+        
+     -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        <h3 v-pre>1234567</h3>
+        <h3 v-once>{{n}}</h3>
+    <h3>{{n}}</h3>
+    <button @click="n++">点击+1</button>
+    </div>
+    
+
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    n:1
+                }
+            },
+        })
+    </script>
+</body>
+</html>

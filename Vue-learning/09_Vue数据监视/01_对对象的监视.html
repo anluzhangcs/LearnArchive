@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <!-- Vue对对象的监视
+        首先,创建Vue实例时递归的对data中数据添加响应式setter
+        然后,包装完成之后将data 赋值给 vm._data
+        最后,通过Object.defineProperty为vm添加属性,实现vm对vm_data的数据代理
+
+        当页面数据发生改变时, 这个改变会被vm_data劫持到 ,然后通过响应式setter将它改变,并重新解析Vue模板,
+        从而实现对数据的监视
+    -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <div id="demo">
+        <h2>学生信息</h2>
+        <h3>{{student.age}}</h3>
+        <h3>{{student.sex}}</h3>
+        <h3>{{student.name}}</h3>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+        const vm = new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    student:{
+                        name:'张三',
+                        age:22,
+                        sex:'男'
+                    }
+                }
+            },
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <!-- 数据代理
+        使用一个对象操作(读写)另一个对象的操作
+     -->
+
+     <script type="text/javascript">
+        Vue.config.productionTip = false;
+    // 通过o2操作o1的x属性
+        var o1 = {
+            x:100
+        }
+        var o2 = new Object()
+        Object.defineProperty(o2,'x',{
+            get(){
+                return o1.x
+            },
+            set(value){
+                o1.x = value
+            }
+        })
+
+     </script>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<!-- 计算属性 和 监听属性 
+        ①计算属性可以实现的监听属性也可以实现,但较为麻烦;监听属性能实现的计算属性不一定能实现,如异步操作
+        重要原则:
+        ①被vue所托管的函数(如methods中函数,computed中getter、setter方法,watch中handler方法...)一般
+            写成普通函数,这样其this才会指向vm实例或组件实例
+        ②其他函数,如定时器回调函数,Ajax回调函数,Promise函数等一般写为箭头函数,目的也是为了让this指向vm
+            或组件实例.
+            如计时器的回调函数由js引擎调用,如果写成普通函数,则this指向window;写成箭头函数,this指向其父作用域,即vm实例
+            ===> 函数的this要指向vm或组件实例
+
+        箭头函数:this指向父作用域
+        普通函数:this指向调用它的对象
+    -->
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+
+<body>
+    <div id="demo">
+        姓: <input type="text" v-model="firstName"> <br>
+        名: <input type="text" v-model="lastName"> <br>
+        <button>{{fullName}}</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el: '#demo',
+            data() {
+                return {
+                    firstName: 'zhang',
+                    lastName: 'san',
+                    fullName: 'zhang-san'
+                }
+            },
+            // 用监听属性完成计算属性案例
+            watch: {
+                firstName(newVal) {  //监听属性的简写
+                    // 
+                    
+                    setTimeout(() => { //异步实现更新
+                        this.fullName = newVal + '-' + this.lastName
+                    }, 1000)
+
+                },
+                lastName(newVal) {
+                    this.fullName = this.firstName + '-' + newVal
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

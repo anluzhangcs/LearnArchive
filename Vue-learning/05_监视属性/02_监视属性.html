@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <!-- watch监视属性改变
+        写法1:在new Vue()实例时在配置项watch中配置
+        写法2:拿到Vue实例后用$watch监视
+     -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        <h3>今天天气很{{info}}</h3>
+        <button @click="changeWeather">点击切换</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+        const vm = new Vue({
+            el:'#demo',
+            data:{
+                isHot:true
+            },
+            methods:{
+                changeWeather(){
+                    this.isHot = !this.isHot
+                }
+            },
+            computed: {
+                info(){
+                    return this.isHot?'炎热':'凉爽'
+                }
+            },
+
+            //写法1
+            // watch:{ //watch监视配置项
+            //     isHot: {
+            //         immediate: true,
+            //         handler() {
+            //             console.log(111);
+            //         },
+            //     },
+            // },
+        })
+        vm.$watch('isHot',{
+            // immediate:true,
+            handler(){
+                console.log('qe')
+            }
+        })
+    </script>
+</body>
+</html>

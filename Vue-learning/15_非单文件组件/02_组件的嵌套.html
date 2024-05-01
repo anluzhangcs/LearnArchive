@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        <app></app>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        
+        // 注:越里层的组件在声明式要放在更前面,否则报错
+
+        const student = Vue.extend({
+            template:`
+            <div>
+                <h3>{{name}}</h3>
+                <h3>{{age}}</h3>
+            </div>
+            `,
+            data() {
+                return {
+                    name:'张三',
+                    age:18
+                }
+            },
+        })
+
+        const school = Vue.extend({
+            template:  `
+            <div>
+                <h3>{{name}}</h3>
+                <h3>{{level}}</h3>
+                <student></student>
+            </div>
+            
+            `,
+            data() {
+                return {
+                    name:'安一中',
+                    level:'省重点'
+                }
+            },
+            components:{
+                student
+            }
+        })
+
+        const app = Vue.extend({
+            template:`
+            <div>
+                <school></school>
+            </div>
+            `,
+            components:{
+                school
+            }
+        })
+
+
+        new Vue({
+            el:'#demo',
+            components:{
+                app
+            }
+        })
+
+    </script>
+</body>
+
+</html>

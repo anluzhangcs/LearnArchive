@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Vue模板语法
+    ①插值语法{{}}
+    功能:适用于解析标签体内容
+    写法:{{xxx}},它可以取到data中的所有数据
+
+    ②指令语法v-xxx
+    功能:用于解析标签(标签属性,标签体内容,绑定事件...)
+    写法:v-xxx  如v-bind,v-if,v-for ...
+ -->
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <div id="demo">
+        <h2>插值语法</h2>
+        <h3>你好!! {{name.toUpperCase()}}</h3>
+        <hr/>
+        <h2>指令语法</h2>
+        <!-- v-bind指令用于在标签属性中插值(可以简写为:),使用时标签属性值也规定为js表达式 -->
+        <h3><a v-bind:href="school.address">点我去{{school.name.toUpperCase()}}</a></h3>
+        <h3><a :href="school.address">点我去{{school.name.toUpperCase()}}</a></h3>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        new Vue({
+            el:'#demo',
+            data:{
+                name:'jack',
+                school:{
+                    name:'ctgu',
+                    address:'https://www.ctgu.edu.cn/'
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

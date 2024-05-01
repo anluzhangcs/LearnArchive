@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <!-- 过滤器(本质就是一个函数)
+        定义方式:
+        -局部过滤器:在vm中filters中被定义
+        -全局过滤器:在vm实例化之前,用Vue.filter(fliterName,function ():{})
+        注:局部过滤器只能在这个vm实例中使用
+
+        使用: 和|管道符搭配使用
+        {{value | filter1 | filter2}}
+        v-bind:="value | filter1 | filter2"
+        注:
+        ①过滤器可以串联使用
+        ②过滤器不会改变原来的值
+        ③过滤器中默认传入要过滤的值,也可以传入其他值
+
+     -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <!-- 引入第三方js库 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/dayjs/1.11.0/dayjs.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        <!-- 计算属性实现 -->
+        <!-- 当前时间{{fmtTime}} -->
+
+        <!-- 函数实现 -->
+        <!-- 当前时间{{getFmtTime()}} -->
+
+        <!-- 过滤器实现 -->
+        <!-- {{time | timeFormater}} -->
+        {{time | timeFormater("YYYY-MM-DD") | myFilter}}
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+        Vue.filter('myFilter', function(value){
+            return value.slice(0,4)
+        })
+        new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    time:1648645354612,
+                }
+            },
+            computed:{
+                fmtTime(){
+                    //dayjs库提供一个全局函数dayjs(time).format(pattern) time为时间戳,pattern为格式
+                    return dayjs(this.time).format("YYYY-MM-DD HH-mm-ss")
+                }
+            },
+            methods: {
+                getFmtTime(){
+                    return dayjs(this.time).format("YYYY-MM-DD HH-mm-ss")
+                }
+
+            },
+            
+            filters:{
+                timeFormater(value,pattern="YYYY-MM-DD HH:mm:ss"){ //ES6中引入,pattern设置默认值
+                    return dayjs(this.time).format(pattern)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

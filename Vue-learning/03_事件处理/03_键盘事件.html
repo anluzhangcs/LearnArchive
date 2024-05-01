@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <!-- 
+        Vue的键盘事件
+        @keyup == v-on:keyup  ;  @keydown == v-on:keydown   ;@keypress
+
+        ①常用键的绑定(Vue为常用键起了别名)
+            enter 回车键  
+            delete 删除或退格键
+            esc   推出键
+            space
+            up
+            down
+            left
+            right
+            tab    必须和keydown绑定.因为如果使用keyup,当松下tab后,焦点会转移,因此事件不会被触发
+
+        ②Vue没有提供别名的可以直接使用键名或者键值(一般不推荐使用)
+
+        ③系统修饰键(ctrl,shift,alt,meta即win键)
+            -与tab类似,一般和keydown配合使用;与keyup使用,当此键+x最后的x松开后才会执行
+            -可以指定具体的x.如@keyup.ctrl.y 表示按下ctrl+y后事件被触发
+
+        ④自定义键的别名
+        Vue.config.KeyCodes
+
+     -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <div id="demo">
+        <!-- @keyup绑定按键抬起事件 -->
+        <input type="text" v-on:keyup.delete="foo"> 
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        // 自定义键的别名
+        Vue.config.keyCodes = {
+            "huiche": 13, //别名:键值
+        };
+
+        new Vue({
+            el : '#demo',
+            data(){
+                return {
+
+                }
+            },
+            methods: {
+                foo(e) {
+                    // 原生js写法
+                    // console.log(e.type)
+                    // if(e.keyCode == 13){ //当keyup事件按键为13即enter键时,触发事件
+                    //     console.log('输入框 :>> ', e.target.value);
+                    // }
+
+                    console.log(e.key)
+                    console.log('object :>> ', e.target.value);
+                    }
+                    
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <!-- MVVM模型 
+        M : Model,为data中存放的数据
+        V : View,为Vue模板
+        VM : ViewModel,为Vue实例
+        ==>VM作为Model和View间的桥梁:
+            通过数据绑定将Model中的js对象放到View中,通过监听View上的改变来更新data中的数据
+
+        VM即Vue实例中可以获取到 Vue原型,本身的数据以及data中的数据 ==> 因此{{}}中也可以取到这个数据
+    -->
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <!-- View -->
+    <div id="demo">  
+        <h1>{{name}}</h1>
+        <h1>{{1+1}}</h1>
+        <h1>{{$mount}}}</h1>
+
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+
+        const vm = new Vue({  //ViewModel
+            el:'#demo',   
+            data() {
+                return {
+                    name: 'zhangsan', //Model
+                };
+            },
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <!-- 总结
+        v-bind指令为单向数据绑定,数据从data流向页面
+            v-bind:可以简写为:
+
+        v-model指令为双向数据绑定,数据从data流向页面,也从页面流向data
+            v-model适用于表单元素(input,select,radio),默认收集value属性的值
+            ==> v-model:value可简写为v-model
+     -->
+
+    <div id="demo">
+        <!-- 一般写法 -->
+        <!-- 单向数据绑定: <input type="text" v-bind:value="name"> <br>
+        双向数据绑定: <input type="text" v-model:value="name"> -->
+
+        <!-- 简写 -->
+        单向数据绑定: <input type="text" :value="name"> <br>
+        双向数据绑定: <input type="text" v-model="name">
+    </div>
+
+    <script text="text/javascript">
+        Vue.config.productionTip = false;
+        new Vue({
+            el:'#demo',
+            data:{
+                name:'zhangsan'
+            }
+        })
+    </script>
+
+</body>
+</html>

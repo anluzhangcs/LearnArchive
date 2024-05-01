@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <!-- 绑定样式
+        class样式:
+            (v-bind:):class = "xxx",xxx可也为字符串,对象,数组
+                注:为对象时,class样式名即为属性名,值为true或者false
+        
+        style样式:
+            :style="xxx" ,xxx只能为对象或者对象数组
+            注:对象中的属性要为原来css中就有的样式.如fontSize = font-size,backgroundColor = background-color
+
+     -->
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+
+    <style>
+        .basic{
+            width: 200px;
+            height: 200px;
+            border-radius: 50px;
+        }
+        .happy{
+            background-color: red;
+        }
+        .sad{
+            background-color: blue;
+        }
+        .normal{
+            background-color: chartreuse;
+        }
+
+        .bgc{
+            background-color: chocolate;
+        }
+        .ft{
+            font-size: 40px;
+            font-weight: bold;
+            font-family: '微软雅黑';
+        }
+        .positon{
+            margin-top: 200px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- 绑定class样式---属性形式 -->
+    <!-- <div id="demo" class="basic" :class="mood" @click="changeMood"></div> -->
+
+    <!-- 绑定class样式---数组形式-->
+    <!-- <div id="demo" class="basic" :class="classArr">Hello</div> -->
+
+    <!-- 绑定class样式---对象形式 -->
+    <!-- <div id="demo" class="basic" :class="classObj">123</div> -->
+
+    <!-- 绑定style内联样式--对象形式 -->
+    <div id="demo" class="basic" :style="styleObj" >123</div>
+
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    mood:'happy',
+                    classArr:['ft','bgc','position'],
+                    classObj:{
+                        bgc:true, //对象中属性即为class样式,true启用
+                        ft:false
+                    },
+                    // 注意绑定style内联样式时,属性名不能乱写.为原来css属性名转换 多个单词才用驼峰命名
+                    styleObj:{
+                        fontSize:40 + 'px' //
+                    }
+                }
+            },
+            methods: {
+                changeMood(){
+                    const arr = ['happy','normal','sad']
+                    // floor函数向下取整 random取[0,1)的随机数
+                    let index = Math.floor(Math.random()*3)
+                    console.log(index)
+                    this.mood = arr[index]
+                }
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <script>
+
+        Vue.config.productionTip = false;
+
+        var number = 18
+        var stu = {
+            name:'zhangsan',
+            sex:'male'
+        }
+        Object.defineProperty(stu,'age',{
+            // value:number,
+            // enumerable:true,  //使该属性可以被枚举(遍历)
+            // writable:true,    //使该属性可以被修改
+            // configurable:true, //使该属性可以被删除
+
+            // getter读方法,每次被读取的时候调用.返回值作为该属性的值
+            get(){
+                console.log('我被读取了')
+                return number 
+            },
+
+            // setter写方法,属性被写的时候调用,并将修改的值赋值给value
+            set(value){
+                console.log('我被修改了')
+                number = value
+            }
+
+        })
+        // console.log(Object.keys(stu))
+    </script>
+</body>
+</html>

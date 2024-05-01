@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <!-- v-text指令
+        功能:替换标签中内容 只能解析成纯文本
+        v-html指令:
+        功能:替换标签中的内容 可以解析html元素
+     -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        <h3 v-text="str">12345</h3>
+        <h3 v-html="str2">12345</h3>
+    </div>
+    
+
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    str:"zhangsan",
+                    str2:'<a href="http://www.baidu.com">点击跳转<a/>'
+                }
+            },
+        })
+    </script>
+</body>
+</html>

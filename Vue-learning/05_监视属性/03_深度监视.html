@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <!-- 总结
+        ①对于属性,Vue可以检测到多级结构,而Vue的watch配置只能监测到一层
+        ②deep:true就可以打开深度监视.当属性或者属性内部任意发生改变时,都会被检测到
+     -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        <h3>深度监视</h3>
+        <hr>
+        <h3>a的值为{{numbers.a}}</h3>
+        <!-- 事件中可以指定函数,也可以写一些简单的语句-->
+        <button @click="numbers.a++">点击加1</button>
+        <h3>b的值为{{numbers.b}}</h3>
+        <button @click="numbers.b++">点击加1</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    numbers:{
+                        a:1,
+                        b:1
+                    }
+                }
+            },
+            watch:{
+                'numbers.a':{  //注:这是简写.实际上watch中监视属性需要'xxx'这样的形式
+                    // 初始化时立即调用handler函数
+                    immediate:true,
+                    
+                    // hnadler,监测属性值发生改变时被调用
+                    handler(){
+                        console.log('a is change')
+                    }
+                },
+            
+                // 深度监视.当属性内部值发生改变时也可以被检测到
+                'numbers':{
+                    immediate:true,
+                    // deep:true,   //打开深度监视
+                    handler(newVal,oldVal){
+                        console.log(newVal,oldVal)
+                    },
+                }
+            }
+        })
+    </script>
+</body>
+</html>

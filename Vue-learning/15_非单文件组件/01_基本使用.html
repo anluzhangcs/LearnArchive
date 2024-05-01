@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="root">
+        <!-- 第3步 通过vc名作为标签来引用组件实例 -->
+        <school></school>
+        <school></school>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+        
+        // 第1步.声明组件实例(使用Vue.extend())
+        const vc = Vue.extend({  //传入组件配置options,和vm实例类似
+            //组件模板,之后可以通过组件标签使用
+            template:` 
+            <div>
+                <h3>{{name}}</h3>
+                <h3>{{level}}</h3>
+                <button @click="changeName">点击改变名称</button>
+            </div>
+            `,
+            data() {  //组件中的data必须使用函数式
+                return {
+                    name:'安陆一中',
+                    level:'省重点'
+                }
+            },
+            methods:{
+                changeName(){
+                    this.name = '三峡大学'
+                }
+            }
+        })
+
+        //第2步.注册VueComponent
+        //①全局注册,可以供不同的vm使用.第一个参数为后面vc要使用的名字,第二个参数为指向vc的变量名
+        // Vue.component('vc',vc)
+
+        const vm = new Vue({
+            el:'#root',
+            
+            //②局部注册,只能供这个vm使用
+            components:{
+                //全写模式
+                "School":vc 
+
+                //当后面要使用vc的名字和指向vc变量名一致时,可以只写指向vc变量名来找到vc
+                // vc
+            }
+        })
+
+    </script>
+
+</body>
+</html>

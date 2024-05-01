@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <!-- Vue对数据的监视
+        通过响应setter监测初始化Vue实例时data中的数据(本质是数据代理并添加重新解析Vue模板的逻辑)
+        
+
+        追加初始化时没有的属性并实现响应式:
+            -对象的属性:使用Vue.set或vm.$set(target,key,value)
+            -数组的元素:使用变更方法(push,unshift,pop,shift,sort,reverse,splice),
+                        使用不变更数组的方法(filter,concat,slice)并将值赋给原数组
+                        使用Vue.set或vm.$set(target,key,value)
+        注:不能向vm或者vm_data中添加属性
+    -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        <h2>学生信息</h2>
+        <hr>
+        <button @click="addSex">为学生添加性别,初始为男</button>  <br>
+        <button @click="student.sex = '女' ">更改性别</button> <br>
+        <button @click="addFirend">添加一个朋友并放在最前面</button> <br>
+        <button @click="addHobby">添加一个爱好</button> <br>
+        <button @click="updateHobby">修改爱好</button> <br>
+        <h3>{{student.name}}</h3>
+        <h3>{{student.age}}</h3>
+        <h3 v-show="student.sex">{{student.sex}}</h3>
+        <hr>
+        <h3>朋友</h3>
+        <ul>
+            <li v-for="f in student.friend">
+                {{f.name}}-{{f.age}}
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="h in student.hobby">
+                {{h}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    student:{
+                        name:'张三',
+                        age:22,
+                        friend:[
+                            {name:'小红',age:19},
+                            {name:'小明',age:29}
+                        ],
+                        hobby:['唱歌','跳舞']
+                    }
+                }
+            },
+            methods:{
+                addSex(){
+                    //动态添加一个属性
+                    this.$set(this.student,'sex','男')
+                },
+                addFirend(){
+                    //对于数组的变更,可以使用被Vue包装的Array.prototype中的方法
+                    this.student.friend.unshift({name:'小钟',age:39})
+                },
+                addHobby(){
+                    //同样是数组的变更
+                    this.student.hobby.push('运动')
+                },
+                updateHobby(){
+                    //数组变更
+                    this.student.hobby.splice(0,1,'游泳')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

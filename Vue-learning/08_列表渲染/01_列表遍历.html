@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 
+    遍历指令 v-for = "(item,index) in/of items"
+        item为遍历项
+        index为索引(数组、字符串中index为数组下标，对象中为键名)
+        items为数据源
+    注：v-for一般和 :key配合使用,:key用来唯一标识
+        注:不显示指定key时,key默认用index
+ -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <div id="demo">
+        <h3>遍历数组</h3>
+        <ul>
+            <li v-for="(item,index) in persons" :key="index">{{item.name}}+{{item.age}}</li>
+        </ul>
+        <hr>
+
+        <h3>遍历对象</h3>
+        <ul>
+            <li v-for="(item,index) in car" :key="index">{{item}}++{{index}}</li>
+        </ul>
+        <hr>
+
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    persons:[{id:'001',name:'zhangsan',age:'18'},
+                    {id:'002',name:'lisi',age:'19'},{id:'003',name:'wangwu',age:'20'}],
+
+                    car:{
+                        name:'奥迪',
+                        price:'700000',
+
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

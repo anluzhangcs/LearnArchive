@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        <h3>{{n}}</h3>
+        <h3>放大10倍</h3>
+        <h3 v-big="n" ></h3>
+        <button @click="n++">点击加1</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    n:1
+                }
+            },
+            directives:{  //配置自定义指令
+                big(element,binding){
+                    //指令为v-xxx,配置时用xxx进行配置,并注意Vue推荐kyab-case命名法(v-xxx-xxx)
+                    //指令会传入2个参数.一个是与之绑定的元素,一个是它绑定的数据
+                    console.log(element)
+                    console.log(binding)
+                    element.innerText = binding.value * 10
+                }
+            }
+        })
+    </script>
+</body>
+</html>

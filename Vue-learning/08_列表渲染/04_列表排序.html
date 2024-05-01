@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="demo">
+        <h3>列表排序</h3>
+        <input type="text" placeholder="请输入姓名:" v-model="keyWord">
+        <button @click="sortType=1">升序</button> 
+        <button @click="sortType=2">降序</button>
+        <button @click="sortType=0">原序</button> 
+        <ul>
+            <li v-for="p in filterPersons" :key="p.id">
+                {{p.name}}-{{p.age}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    keyWord:'',
+                    sortType:'0',
+                    persons:[
+                        {id:'001',name:'张豪',age:'18'},
+                        {id:'002',name:'张三',age:'19'},
+                        {id:'003',name:'张三丰',age:'17'},
+                        {id:'004',name:'张龙',age:'20'}
+                    ],
+                }
+            },
+            computed:{
+                filterPersons(){
+                    //先对数组进行过滤
+                    const arr = this.persons.filter((p)=>{ //p为数组中的element
+                        return p.name.indexOf(this.keyWord) !== -1
+                    })
+
+                    //判断sortType值.为0直接返回，1 or 2排序
+                    if(this.sortType){
+                        arr.sort((p1,p2)=>{  //sort函数。两个参数分别为前后元素
+                            return this.sortType === 1? p1.age-p2.age:p2.age-p1.age
+                        })
+                    }
+
+                    //返回数组
+                    return arr
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

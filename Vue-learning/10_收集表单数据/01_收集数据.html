@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <!-- Vue收集表单数据(v-model)
+        普通表单项(如type=text,password):直接收集数据
+        选择项(checkbox,radio,select):
+            ①radio,checkbox,select要配置value的值,否则收不到具体的值 (checkbox不配置收到的是true/false)
+            ②checkbox收集项需为数组类型,否则只收集true or false 表示选没选
+            ③select只需在select标签上配置v-model
+        
+        v-model修饰符:
+            number:收集number类型
+            lazy:延迟收集数据(失去焦点)
+            trim:除去空格
+    -->
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <div id="demo" >
+        <!-- @submit为提交事件, -->
+        <form @submit.prevent="foo"> 
+            姓名: <input type="text" v-model="name"> <br>
+            密码: <input type="password" v-model="password"> <br>
+            年龄: <input type="number" v-model.number="age"> <br>
+            性别:
+            男<input type="radio" name="sex" v-model="sex" value="男">
+            女<input type="radio" name="sex" v-model="sex" value="女">
+            <br><br>
+            爱好:
+            唱歌<input type="checkbox" name="hobby" v-model="hobby" value="sing" >
+            跳舞<input type="checkbox" name="hobby" v-model="hobby" value="dance"> 
+            运动<input type="checkbox" name="hobby" v-model="hobby" value="sport">
+            <br><br>
+            <select name="position" v-model="city">
+                <option value="">请选择城市</option>
+                <option value="北京">北京</option>
+                <option value="武汉">武汉</option>
+                <option value="上海">上海</option>
+            </select>
+            <br><br>
+            自我介绍:
+            <textarea name="des" v-model.lazy="des"></textarea>
+            <br><br> 
+            <input type="checkbox" name="12" v-model="agree"> 同意<a href="http://www.baidu.com">《用户协议》</a>
+            <br>
+            <button>提交</button>
+        </form>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#demo',
+            data() {
+                return {
+                    name:'',
+                    password:'',
+                    age:'',
+                    sex:'男',
+                    hobby:[],
+                    des:'',
+                    agree:'',
+                    city:''
+                }
+            },
+            methods: {
+                foo(){
+                    console.log(JSON.stringify(this._data))
+                }
+            },
+        })
+    </script>
+
+</body>
+</html>
