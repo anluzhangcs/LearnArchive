@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <style>
+        .logo{
+            text-align: center;
+        }
+        .login{
+            margin-top: 100px;
+            text-align: center;
+        }
+        .password{
+            margin-left:36px;
+        }
+        .log button{
+            background-color: orangered;
+            margin-top:20px;
+            width: 100px;
+        }
+        .log a{
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="logo">京东登录</h1>
+    <div class="login">
+        <div class="username">
+            <i class="fas fa-user"></i>
+            <input type="text" name="un" id="unid" placeholder="用户名 / 邮箱  / 手机号">
+        </div>
+        <div class="password">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="pw" id="pwid" placeholder="密码">
+            <button id="btneye">
+                <i id="eye" class="fas fa-eye-slash"></i>
+            </button>
+        </div>
+        <div class="log">
+            <button>
+                <a href="javacript:;">登录</a>
+            </button>
+        </div>
+    </div>
+    <script>
+        //实现功能 点击按钮显示密码
+        var btneye = document.getElementById('btneye');
+        var eye = document.getElementById('eye');
+        var pwid = document.getElementById('pwid');
+        var flag = 0;  //一开始看不见密码
+        btneye.onclick = function () {
+            /* 
+            点击之后 判断 flag值
+            flag=0 证明看不见 点击之后要能看见
+            flag=1 证明看得见 点击之后看不见
+            */
+            if (!flag) {
+                pwid.type = 'text';
+                eye.className = 'fas fa-eye';
+                flag = 1;
+                
+            } else {
+                pwid.type = 'password';
+                eye.className = 'fas fa-eye-slash';
+                flag = 0;
+                
+            }
+            
+        }
+    </script>
+</body>
+</html>

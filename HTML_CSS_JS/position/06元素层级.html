@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        元素开启定位后，层级会变高
+        -默认情况下层次为0
+        -默认情况下越下面，越后面的元素层级越高
+        -设置层级，属性z-index 
+            z-index值不同时 越大层级越高
+            z-index值相同时 按默认情况
+         */
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+            position: absolute;
+            /* z-index: 1; */
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+            position: absolute;
+            top:50px;
+            left: 50px;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: turquoise;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            /* z-index: 2; */
+        }
+        .box4{
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+            position: absolute;
+            top:100px;
+            left:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3
+        <div class="box4">4</div>
+    </div>
+</body>
+</html>

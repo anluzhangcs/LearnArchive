@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: yellow;
+        }
+        .red{
+            background-color: red !important;  
+        }
+        .green{
+            background-color: green;
+        }
+        #box{
+            background-color: orange;
+        }
+        #box.red{
+            background-color: pink;
+        }
+        /* *{
+            background-color: blue;
+        } */
+    </style>
+    <!-- 
+        样式优先级         优先级
+        内联样式            1000
+        id选择器            100
+        类和伪类选择器        10
+        元素选择器           1
+        通配选择器          0
+        继承样式        无优先级
+        -同一种选择器，优先级相同，写在下面的优先级更高
+        -比较优先级时，复杂选择器将优先级相加后在比较 
+        但不会超过其中最高优先级的上限
+        -!important 使优先级最高 甚至超过内联样式
+        
+     -->
+</head>
+<body>
+    <div id="box" class="red green" style="background-color: purple;">
+        我是一个div
+        <p>我是div中的p元素</p>
+    </div>
+</body>
+</html>

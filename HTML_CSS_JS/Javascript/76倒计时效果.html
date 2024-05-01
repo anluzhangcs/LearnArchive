@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .time{
+            width: 500px;
+            height:500px;
+            margin:0 auto;
+            background-color: lightseagreen;
+        }
+        span{
+            display: inline-block;
+            width:100px;
+            height: 100px;
+            margin:200px 30px;
+            background-color: #999;
+            text-align: center;
+            vertical-align: middle;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="time">
+        <span class="hour"></span>
+        <span class="minute"></span>
+        <span class="second"></span>
+    </div>
+    <script>
+        var inputTime = + new Date('2021-8-8 18:00:00');
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        setInterval(countDown,1000);
+        function countDown() {
+            var nowTime = + new Date();  //返回当前时间毫秒数
+            var seconds = (inputTime - nowTime)/1000;
+            var d = parseInt(seconds/60/60/24);
+            var h = parseInt(seconds/60/60%24);
+            hour.innerText = h<10 ? '0'+h : h;
+            var m = parseInt(seconds/60%60);
+            minute.innerText = m<10 ? '0'+m : m;
+            var s = parseInt(seconds%60);
+            second.innerText = s<10 ? '0'+s : s;
+            // console.log('1');
+        }
+    </script>
+</body>
+</html>

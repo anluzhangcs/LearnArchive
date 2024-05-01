@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        基本包装：
+            将简单数据类型包装为复杂数据类型 从而具有对象的属性 
+            -生成临时对象 tmp = new String ('abc');
+            -将tmp赋值给str  str = tmp;
+            -销毁tmp   tmp = null;
+         */
+        var str = 'abcfqdajfknalxma';
+        console.log(str.length); //使得str具有length属性
+
+        //根据元素获取下标 indexof(item1,item2)
+        // -item1为要查找的元素
+        // -item2为从哪开始查找
+        console.log(str.indexOf('a'));
+        console.log(str.indexOf('a',3));
+
+        //-应用：查找元素出现的所有位置下标和出现次数
+        function showIndex (str,k) {
+            var num = 0;
+            var index = str.indexOf(k);
+            while(index!=-1 && index<str.length) {
+                num++;
+                console.log(index);
+                index++;
+                index = str.indexOf(k,index);
+            }
+            return num;
+        }
+        console.log(showIndex('cdjvbzahjksbv','b'));
+
+        //利用下标查找字符
+        console.log(str.charAt(0));  //charAt() 返回字符
+        console.log(str.charCodeAt(0));    //charCodeAt()     返回ASCII码
+        console.log();     //str() H5新增 和charAt()一样
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        //    Date对象为构造函数 必须用new创建实例后才能使用 与Math对象不同
+            // 无参数创建
+        var date = new Date();  //创建当前时间的对象
+        console.log(date);
+            // 数字参数创建
+            //-月份为 0-11 故显示月份会比输入月份大1
+            //-不常用
+        var date1 = new Date(2020,4,5);
+        console.log(date1);
+            //字符串参数创建
+            //-不会出现数字创建的问题   常用
+            //-会有浏览器不兼容问题
+        var date2 = new Date('2020-12-17 03:24:00')
+        console.log(date2);
+
+        // 格式化日期  显示出我们习惯的
+        //封装成函数
+        function showMyDate(date) {
+            var xinqi = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+            var year = date.getFullYear();     //获取年份
+            var month = date.getMonth()+1;  //获取实际月份要 -1
+            var dates = date.getDate()    //获取日
+            var day = date.getDay();       //获取星期几 星期 0-6 0表示星期天
+            var h = date.getHours();
+            h = h <10 ? '0'+h : h;
+            var m = date.getMinutes();
+            m = m < 10 ? '0'+m : m;
+            var s = date.getSeconds();
+            s = s <10 ? '0'+s : s
+            var str = '';
+            str = '现在是北京时间：' + year + '-' + month + '-' + dates + ' ' + xinqi[day] + ' ' + h + ':' +m + ':' + s;
+            return str;
+        }
+        console.log(showMyDate(date));
+
+        //获取Date对象距世界标准时间的总毫秒数
+        //-valueOf()      getTime()方法
+        console.log(date.valueOf());
+        console.log(date.getTime());
+        // +new Date()    常用方法
+        var num = + new Date();      // + new Date() 即返回距标准时间的毫秒数
+        console.log(num); 
+        console.log(typeof(num));    //num 为数字型
+        // H5新增的方法
+        console.log(Date.now());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Layout/CSS/reset.css">
+    <style>
+        /* 
+        设置容器样式
+         */
+        nav{
+            /* 设置宽度 */
+            width: 300px;
+            /* 设置高度 */
+            height: 357px;
+            /* 设置边框 */
+            border-top:1px #ddd solid;
+            /* 居中 距顶部50px */
+            margin:50px auto;
+        }
+        /* 设置新闻标题 */
+        .news-title{
+            /* 设置行内块元素 是的边框和文字宽度一致 */
+            display:inline-block;
+            /* 设置高度 */
+            height:18px;
+            /* 内边距 */
+            padding-top:15px;
+            /* 设置边框 */
+            border-top:1px red solid;
+            /* 设置顶部外边距 使之和外部容器边框重合 */
+            margin-top:-1px; 
+                 
+        }
+        .news-title a{
+            /* 设置超链接的字体大小 加粗 颜色 以及下划线 */
+            font-weight: bold;
+            color: black;
+            font-size:18px;
+            text-decoration: none;  
+        }
+        div{
+            /* 设置div外边距 */
+            margin:25px 0;
+        }
+        .img-title{
+            margin-top:-30px;
+            color:white;
+            padding-left:30px;
+            font-weight: bold;
+        }
+        /* 设置新闻列表 */
+        .news-list li{
+            /* 设置表头样式 */
+            list-style:square;
+
+            color: rgb(218, 218, 218);
+            /* 设置下边距 */
+            margin-bottom: 16px;
+            /* 设置表头位置 */
+            list-style-position: inside;
+
+        }
+        /* 设置鼠标移入属性 */
+        li a:hover{
+            color:red;
+        }
+        li a{
+            text-decoration: none;
+            color: #333333;
+            font-size:14px;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="news">
+        
+        <h2 class="news-title">
+            <a href="#">体育</a>
+        <h2>
+        <div>
+            <img class="img" src="img/03/1.jpeg" alt="">
+            <h3 class="img-title">费德勒首负迪米 扶额头不满发挥</h3>
+        </div>
+        <ul class="news-list">
+            <li>
+                <a href="#">乔治:我爱LA 喜欢和LBJ一起打球</a>
+            </li>
+            <li>
+                <a href="#">格林:3年前就在等KD 特制T恤嘲讽LBJ</a>
+            </li>
+            <li>
+                <a href="#">塔克4000双鞋让保罗羡慕嫉妒 乔丹被震惊</a>
+            </li>
+            <li>
+                <a href="#">CBA下季新赛制:常规赛4组循环 增至46轮</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>123</li>
+        <li>456</li>
+        <li>789</li>
+    </ul>
+    <script>
+        /*
+            复制节点 clonNode()
+                -cloneNode()  浅复制 只复制元素
+                -cloneNode(true)  深复制 同时复制里面的内容  
+         */
+        var ul = document.querySelector('ul');
+        var li1 = ul.children[0].cloneNode();
+        ul.appendChild(li1);
+        var li2 = ul.children[0].cloneNode(true);
+        ul.appendChild(li2);
+    </script>
+</body>
+</html>

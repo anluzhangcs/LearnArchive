@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        .img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo"></div>
+    <img src="" alt="" class="img">
+    <script>
+        var date = new Date('2019-02-10 08:00:00');
+        var h = date.getHours();
+        var demo = document.querySelector('.demo');
+        var img = document.querySelector('.img');
+        if (h>=6 &&h<12) {
+            demo.innerHTML = 'Good Morning!!!';
+            img.src = 'images/morning.jpg';
+        } else if (h>=12 && h<=18) {
+            demo.innerHTML = 'Good Noon!!!';
+            img.src = 'images/noon.jpg';
+        } else {
+            demo.innerHTML = 'Good Evening';
+            img.src = 'images/evening.jpg';
+        }
+    </script>
+</body>
+</html>

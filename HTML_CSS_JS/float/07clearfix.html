@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            /* float:left; */
+        }
+        /* .box1::before{
+            content:'';
+            display:table;
+        } */
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin-top:100px;
+            /* float:left; */
+        }
+        .box3{
+            border:10px red solid;
+        }
+        .box4{
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+            float:left;
+        }
+        /* .box3::after{
+            content:'';
+            display:block;
+            clear:both;
+        } */
+        /*
+        外边距重叠问题：
+            只需将父子元素中任意一个开启BFC即可 
+            或者在父元素前面加上before 将外边距分隔开
+        高度塌陷问题：
+            -开启BFC
+            -在父元素后加上after且clear浮动元素的影响
+         */
+        /* 同时解决塌陷和层叠问题 */
+        .clearfix::after,
+        .clearfix::before{
+            content:'';
+            display:table;
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1 clearfix">
+        <div class="box2"></div>
+    </div>
+    <div class="box3 clearfix">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

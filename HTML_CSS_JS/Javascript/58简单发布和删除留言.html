@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li{
+            background-color: #bfa;
+            width: 100px;
+            height:40px;
+            margin-top:5px;
+        }
+        a{
+            text-decoration: none;
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="">
+    <button>请输入</button>
+    <ul></ul>
+    <script>
+        var content = document.querySelector('input');
+        var btn = document.querySelector('button');
+        var ul = document.querySelector('ul');
+        btn.onclick = function() {
+            if (content.value != '') {
+                var li = document.createElement('li');
+                ul.appendChild(li);
+                li.innerHTML = content.value + '<a href="javascript:;">删除</a>';
+                var a = li.querySelector('a');
+                a.onclick = function() {
+                    // ul.removeChild(li);
+                    ul.removeChild(this.parentNode);
+                }
+            }
+            else{
+                alert('您没有输入内容');
+            }
+        }
+        //删除留言 即删除链接的父节点li
+        // var as = document.querySelectorAll('a');
+        // for(var i=0; i<as.length; i++) {
+        //     as[i].onclick = function () {
+        //         ul.removeChild(this.parentNode);
+                
+        //     }
+        // }
+    </script>
+</body>
+</html>

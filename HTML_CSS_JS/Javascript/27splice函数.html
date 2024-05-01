@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        splice(item1,item2,item3);
+        参数：
+            item1是必须的 指定从那个索引开始 包括这个索引
+            item2是可选的 指定删除多少个元素
+            item3是可选的 指定插入的元素 
+        返回值：
+            被删除元素组成的数组
+         */
+        var arr = [1,2,3,4,5];
+        arr.splice(2);   //删除从这个下标开始的所有元素
+        console.log(arr);
+        arr.splice(2,0);   //从下标2开始 删除0个元素 返回值为[]
+        console.log(arr);
+        arr.splice(0,2);   //从下标0开始 删除2个元素 返回值为[1,2]
+        // console.log(arr.splice(0,2));
+        console.log(arr);
+        arr.splice(0,1,'red','pink');  //从下表0开始 删除1个元素 插入 ‘red’ ‘pink’        
+        // console.log(arr.splice(0,1,'red','pink'));
+        console.log(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

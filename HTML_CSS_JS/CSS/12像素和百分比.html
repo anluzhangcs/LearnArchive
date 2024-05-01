@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+        .box2{
+            width:50%;
+            height:50%;
+            background-color: orchid;
+        }
+        .box3{
+            font-size:20px;
+            width:10em;
+            height:10em;
+            background-color:palegreen
+        }
+        .box4{
+            font-size:20px;
+            width:10rem;
+            height:10rem;
+            background-color:sienna
+        }
+        /* 
+        -px代表像素
+            像素越小越清晰
+            太小了看不清 所以电脑会放大比例
+        -百分比可以根据父元素的大小设置大小
+        并随之改变
+        -em 根据自身元素大小设置
+            1em=1 font-size
+        -rem 根据根元素设置大小 即html的字体大小
+            默认1font-size=16px；
+         */
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+</html>

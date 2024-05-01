@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo{
+            width: 200px;
+            height: 200px;
+            background-color: #fab;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo"></div>
+    <script>
+        var demo = document.querySelector('.demo');
+        demo.onclick = function () {
+            //更改样式属性
+            //格式 demo.style.backgroundColor
+            //demo为要更改的元素
+            // style表示更改样式属性
+            //backgroudColor 表示更改背景颜色 使用驼峰命名法
+            demo.style.backgroundColor = 'purple';
+            demo.style.width = '250px';
+
+        }
+    </script>
+</body>
+</html>

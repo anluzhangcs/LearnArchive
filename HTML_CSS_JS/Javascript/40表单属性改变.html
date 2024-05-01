@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <!-- 
+        input 属性：
+            type  类型 如文本框(text) 按钮(button) 多选框(checkbox) 单选框(radio) 
+            value 这个标签的值
+            placehodler  占位符 显示提示信息
+     -->
+     <br>
+     <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+    <input type="text" placeholder="Please input here：">
+    <script>
+        // 实现功能 点击按钮 改变文本框的内容
+        // 1.获取元素
+        var btn = document.querySelector('button');
+        var textbox = document.querySelector('input');
+        // 2.绑定事件 事件处理函数
+        btn.onclick = function () {
+            /* 
+                innerHTML 和 innerText 适用于普通标签 不适用于文本框标签
+                要想改变文本框内容 要改变value属性
+             */
+            // textbox.innerHTML = 'hello world!';
+            // textbox.innerText = 'hello world!';
+            textbox.value = 'hello world!';
+            // 按过一次后禁用按钮  disabled
+            // btn.disabled = true;
+            //this 指向事件函数的调用者
+            this.disabled = true;
+        }
+        // 直接禁用按钮  disabled
+        // btn.disabled = true;
+    </script>
+</body>
+</html>

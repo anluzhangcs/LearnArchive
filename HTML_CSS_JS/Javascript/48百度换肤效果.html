@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/reset.css">
+    <style>
+        body{
+            /* background-image: url() no repeat; */
+            background:url(images/mountain.jpg) no-repeat center top;
+        }
+        .skin li {
+            float:right;
+            margin:200px 100px;
+        }
+        .skin img {
+            display: inline-block;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="skin">
+        <li>
+            <img src="images/mountain.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/sea.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/animal.jpg" alt="">
+        </li>
+    </ul>
+    <script>
+        var imgs = document.querySelectorAll('img');
+        for (var i=0; i<imgs.length; i++) {
+            imgs[i].onclick = function() {
+                document.body.style.backgroundImage = 'url('+this.src+')';
+            }
+        }
+    </script>
+</body>
+</html>

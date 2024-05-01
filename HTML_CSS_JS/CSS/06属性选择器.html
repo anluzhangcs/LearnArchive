@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- 
+    属性选择器：
+        [属性名] 选择带有这个属性的元素
+        [属性名="属性值"] 选择属性为对应属性值的元素
+        [属性名^="..."] 选择属性值以...开头的元素
+        [属性名="$..."] 选择属性值以...结尾头的元素
+        [属性名="..."] 选择属性值含有...的元素
+ -->  
+ <style>
+     /* p[title]{  
+         color:hotpink;
+     } */
+     /* [title="abc"]{
+         color:hotpink;
+     } */
+     p[title^="abc"]{
+        color:hotpink;
+     }
+    /* p[title$="abc"]
+    {
+        color:hotpink;
+    } */
+    p[title*="hello"]{
+        color:rgb(235, 25, 25);
+    }
+ </style>
+</head>
+<body>
+    <h1 title="abc">我是h1元素</h1>
+    <p title="abc">我是p1元素</p>
+    <p title="abcde">我是p2元素</p>
+    <p title="hello">我是p3元素</p>
+    <p title="helloabc">我是p4元素</p>
+    <p>我是p5元素</p>
+    <p>我是p6元素</p>
+</body>
+</html>

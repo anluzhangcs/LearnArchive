@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn" value="唐伯虎">
+    <script>
+        /*
+        事件三要素：
+            -事件源  事件被触发的对象  此例中button即为事件源
+            -事件类型 鼠标点击(onclick) 鼠标移入 键盘 etc...
+            -事件处理程序 一般通过函数赋值实现 
+         */
+         var btn = document.getElementById('btn')  //通过id获取元素 获取事件源
+         btn.onclick = function fun() {   //注册时间 事件处理
+             alert('点秋香');
+         }
+    </script>
+</body>
+</html>

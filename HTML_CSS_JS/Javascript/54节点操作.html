@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="demo1">
+        <div></div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <div class="demo2">
+        <span>今天天气真好！</span>
+        <div class="demo3"></div>
+    </div>
+    <script>
+/*
+        节点：
+        文档中都是节点  元素(标签) 文本 属性 etc...
+ */
+        //获取父节点方法 最近的父节点
+        var demo3 = document.querySelector('.demo3');
+        console.log(demo3.parentNode);
+        //获取子节点
+        //先获取ul
+        var ul = document.querySelector('ul');
+        console.log(ul);
+        // 空格等文本节点也是子节点 故childNodes11个
+        console.log(ul.childNodes);
+        //获取元素节点 children常用
+        console.log(ul.children);
+        console.log(ul.childElementCount);  //获取子元素节点的个数
+
+        // 获取特定的子元素节点
+        console.log(ul.firstChild);  //#text 获取第一个子节点
+        console.log(ul.lastChild);   //#text  获取最后一个子节点
+        // 有兼容性问题
+        console.log(ul.firstElementChild);  //li 获取第一个元素节点
+        console.log(ul.lastElementChild);   //li 获取最后一个元素节点
+        // 兼容性好 又可以满足要求 children
+        console.log(ul.children[0]);  //代表第一个子元素节点
+        // console.log(ul.children[ul.childElementCount-1]);
+        console.log(ul.children.length-1);
+    </script>
+</body>
+
+</html>

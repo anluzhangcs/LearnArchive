@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #baf;
+        }
+    </style>
+</head>
+<body>
+    <form action="javacript">
+        
+    </form>
+    <ul><li>123</li></ul>
+    <script>
+        /*
+        动态创建节点 原始的HTML页面没有 
+            1.创建节点
+            2.添加节点
+                element.appendChild(x)  element为要被添加的父节点 x为要添加的子节点 相当于追加一个元素 和数组的push一样
+                element.insertBefore(x,y) element为父节点 x为要添加的节点 y为指定x在那个节点前添加
+        */
+       var bodyEle = document.body;
+       var div = document.createElement('div');
+        bodyEle.appendChild(div);
+        var form = document.querySelector('form');
+        var input = document.createElement('input');
+        form.appendChild(input);
+       var ul = document.querySelector('ul');    //获取ul   
+        var li = document.createElement('li');  //创建li节点
+        ul.appendChild(li);  //往ul中添加节点li
+        var lili = document.createElement('li')  //创建lili节点
+        ul.insertBefore(lili,ul.children[0])  //在ul第一个子元素节点前添加节点lili
+    </script>
+</body>
+</html>

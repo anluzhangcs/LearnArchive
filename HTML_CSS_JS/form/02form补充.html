@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        input 标签属性
+        value 指定默认值
+        autocomplete 自动填充 off关闭 on打开
+        autofocus  自动
+        readonly 只读不能更改 可以提交
+        disabled  禁止        不可以提交
+     -->
+    <form action="target.html">
+        <!-- 基本文本框 -->
+        <input type="text" name="user" value="zhang" readonly utocomplete="off">
+        <br><br>
+        <!-- email文本框 限制为邮件地址 -->
+        <input type="email" name="email" >
+        <br><br>
+        <!-- password文本框 -->
+        <input type="password" name="password" autocomplete="off">
+        <br><br>
+
+        <!--基本按钮  -->
+        <input type="button" value="按钮">
+        <button>按钮</button>
+        <br><br>
+        <!-- 提交按钮 -->
+        <input type="submit">
+        <button type="submit">提交</button>
+        <br><br>
+        <!-- 重置按钮 -->
+        <button type="reset">重置</button>
+        <input type="reset">
+        <br><br>
+    
+        
+    </form>
+    
+    
+</body>
+</html>

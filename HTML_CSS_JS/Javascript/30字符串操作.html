@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //字符串连接 concat()   注：+ 更方便
+        // 返回值：新的字符串
+        var str1 = 'acb';
+        var str2 = '123';
+        console.log(str1.concat(str2));
+        //字符串裁剪
+        //slice(item1,item2)  item1为起始位置 item2为结束位置 [item1,item2)
+        //当有负数时 指倒数        
+        // 返回值：新的字符串 对原字符串不会有影响
+        var str = 'ashkxajs';
+        console.log(str.slice(1,2));
+        console.log(str.slice(-2,-1)); //结果为j
+        console.log(str.slice(0,-2));
+        console.log(str);
+        //字符串替换 replace(item1,item2) 用item2替换item1
+        //item1为要替换的元素 item2为用来替换的元素
+        // 返回值：新的字符串 对原字符串不会有影响
+        
+        console.log(str.replace('j','a'));
+        console.log(str);
+        //字符串转换为数组
+        //split('item') item为分隔符 默认为, 与join()对应
+        // 返回值：数组 对原字符串不会有影响
+        var ss = 'red,yellow,blue';
+        var ss2 = 'red&yellow&blue';
+        console.log(ss.split());
+        console.log(ss2.split());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

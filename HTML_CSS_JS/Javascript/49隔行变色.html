@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        table{
+            width: 500px;
+            margin:50px auto;
+            border:1px solid #333;
+            border-collapse: collapse;
+        }
+        table td {
+            border:1px solid #333;
+        }
+        thead{
+            background-color: skyblue;
+        }
+        .change{
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>学生表</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+                <td>院系</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>张三</td>
+                <td>19</td>
+                <td>男</td>
+                <td>计科</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>19</td>
+                <td>男</td>
+                <td>水利</td>
+            </tr>
+            <tr>
+                <td>王红</td>
+                <td>19</td>
+                <td>女</td>
+                <td>艺术</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>19</td>
+                <td>男</td>
+                <td>土木</td>
+            </tr>
+            <tr>
+                <td>张洋</td>
+                <td>19</td>
+                <td>女</td>
+                <td>外国语</td>
+            </tr>
+            <tr>
+                <td>李倩</td>
+                <td>19</td>
+                <td>女</td>
+                <td>经管</td>
+            </tr>
+            <tr>
+                <td>张伟</td>
+                <td>19</td>
+                <td>男</td>
+                <td>计科</td>
+            </tr>
+            <tr>
+                <td>李强</td>
+                <td>19</td>
+                <td>男</td>
+                <td>电气</td>
+            </tr>
+            <tr>
+                <td>赵燕</td>
+                <td>19</td>
+                <td>女</td>
+                <td>文学</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        for (var i=0; i<trs.length; i++) {
+            //鼠标移入事件 onmouseover
+            trs[i].onmouseover = function() {
+                // console.log(11);
+                this.className = 'change';
+                // trs[i].style.backgroundColor = '#bfa';
+            }
+            //鼠标移出 onmouseout
+            trs[i].onmouseout = function() {
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+</html>

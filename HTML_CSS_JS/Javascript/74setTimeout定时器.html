@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击停止计时器</button>
+    <script>
+        /*
+            window.setTimeout(function(){},item)
+            -setTimeout 为window方法 使用时可以省略window
+            -item为时间 可以不写 默认为0 单位毫秒
+            -表示多长时间后调用此函数 
+            -有多个定时器时用标识符区分
+            -setTimeout(fn,2000) 返回值为number 为秒数
+         */
+        var btn = document.querySelector('button');
+        var timer1 = setTimeout(fn,2000);
+        var timer2 = setTimeout(function(){console.log('timer2');},5000);
+        function fn() {
+            console.log('timer1');
+        }
+        // console.log(typeof timer1);
+        /*
+            停止计时器  window.clearTimeout(TimeID)
+            -window可以省略
+            -TimeID为计时器的标识符
+        */
+        btn.addEventListener('click',function(){
+            clearTimeout(timer2);
+        });
+    </script>
+</body>
+</html>

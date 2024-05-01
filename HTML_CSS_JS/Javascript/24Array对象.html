@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Array对象
+        // 字面量创建
+        // var arr = [1,2,3];
+        //new 方法创建
+        var arr1 = new Array(2) //创建length=2 的数组
+        var arr = new Array(11,25)  //创建数组[1,2] 相当于字面量
+
+        // 判断是否是数组
+        // 1. 通过 instanceof 运算符判断
+        var obj = {};
+        console.log(arr instanceof Array); //true
+        console.log(arr1 instanceof Array);
+        console.log(obj instanceof Array); //false
+        // 2. 通过isArray() 函数
+        console.log(Array.isArray(arr)); //true
+        console.log(Array.isArray(arr1)); //true
+        console.log(Array.isArray(obj)); //false
+        
+        //通过函数增加数组元素
+            // 在末尾添加 push()
+            // -返回值为数组长度
+        arr.push(3);
+        // arr.push(4,'pink');
+        console.log(arr.push(4,'pink'));
+        console.log(arr);
+            //在头部添加 unshift()
+            //-返回值为数组长度
+        arr.unshift('red',0);
+        console.log(arr);
+
+        //删除元素
+            // pop() 删除最后一个元素 
+            // -返回值为删除的这个元素
+        // ;
+        console.log(arr.pop());
+        console.log(arr);
+            // shift() 删除第一个元素
+            // -返回值为删除的这个元素
+        arr.shift();
+        console.log(arr);
+
+        // 数组排序
+        // 反转数组
+        arr.reverse();
+        console.log(arr);
+        //排序数组（冒泡）
+        // arr.sort();    //只适用于个位数
+            //解决方案
+        arr.sort (function (a,b) {
+            // return a-b;   //升序排序
+            return b-a;  //降序排序
+        })
+        console.log(arr);
+        
+        // 获取元素下标
+        //indexof()  获取第一个找的元素下标 没找到返回 -1
+        //lastindexof()  获取最后一个找到的元素下标 没找到返回 -1
+        var a = ['red','pink','blue','green','blue'];
+        console.log(a.indexOf('blue'));
+        console.log(a.lastIndexOf('blue'));
+        console.log(a.lastIndexOf('sfkg'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

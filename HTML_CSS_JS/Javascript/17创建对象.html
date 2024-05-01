@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //使用字面量创建对象
+        var o = {}//创建一个空对象
+        var obj = {
+            //使用键值对方式 以 , 分隔 最后以;结束
+            uname: '张三丰',  
+            age: 18,
+            sex : '男',
+            sayHi: function (){
+                console.log('hello~');
+            }
+        }
+        //使用 new 方法
+        // var obj = new Object();   //空对象
+        // obj.uname = '张三丰';
+        // obj.age = 18;
+        // obj.sex = '男';
+        // obj.sayHi = function (){
+        //     console.log('hello~');
+        // }
+        //调用对象属性
+        console.log(obj.sex);
+        console.log(obj['uname']);  //注意引号
+        //调用对象方法
+        obj.sayHi();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

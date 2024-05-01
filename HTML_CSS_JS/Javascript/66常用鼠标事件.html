@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        我不想被别人选择
+    </p>
+    <script>
+        //contextmenu 右键菜单时触发事件
+        document.addEventListener('contextmenu',function(e){
+            e.preventDefault();  //阻止默认行为 故不能触发右键菜单
+        });
+        //selectstart  选中文字是触发事件
+        document.addEventListener('selectstart',function(e){
+            e.preventDefault();   //阻止默认行为 是不能被选中
+        })
+        
+    </script>
+</body>
+</html>

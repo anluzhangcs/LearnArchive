@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/reset.css">
+    <script src="jQuery.js"></script>
+    <style>
+        *{
+            text-decoration: none;
+        }
+        .wapper{
+            width: 300px;
+            height:500px;
+            margin:0 auto;
+        }
+        .left{
+            width: 200px;
+            height: 250px;
+            background-color: #EEEEEE;
+        }
+        .left li{
+            width: 200px;
+            height:50px;
+            border:1px solid skyblue;
+            text-align: center;
+        }
+        .content {
+            float: right;
+        }
+        .content img{
+            width: 200px;
+            height: 250px;
+        }
+        .content div{
+            display:none ;
+        }
+        .content .current{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wapper">
+        <ul class="left">
+            <li>
+                <a href="javacript:;">天使</a>
+            </li>
+            <li>
+                <a href="javacript:;">动物</a>
+            </li>
+            <li>
+                <a href="javacript:;">群山</a>
+            </li>
+            <li>
+                <a href="javacript:;">大海</a>
+            </li>
+        </ul>
+        <div class="content">
+            <div class="current">
+                <a href="javacript:;"><img src="images/angel.gif" alt="" ></a>
+            </div>
+            <div>
+                <a href="javacript:;"><img src="images/animal.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="javacript:;"><img src="images/mountain.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="javacript:;"><img src="images/sea.jpg" alt=""></a>
+            </div> 
+        </div>
+    </div>
+</body>
+</html>

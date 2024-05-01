@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        浮动特点
+            -不会盖住文字 可设置文字环绕
+        脱离文档流特点：
+            块元素：
+                -不设置宽高时 默认宽高为内容所撑开
+                -
+            行内元素
+                -可以设置宽高
+        即脱离文档流后块元素 行内元素特点相同
+         */
+        .box1{
+            width:200px;
+            height: 200px;
+            background-color: #bfa;
+            float:left;
+        }
+        .box2{
+            float:left;
+            background-color: red;
+        }
+        .span1{
+            width:100px;
+            height:100px;
+            float:right;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">hello</div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, dolore molestias. Omnis odit, optio minus, accusamus impedit iste veniam neque non eos fugit libero autem saepe cumque facilis at reprehenderit.</div>
+    <div class="box2">
+        helloaaa
+    </div>
+    <span class="span1">fucking shelby</span>
+</body>
+</html>

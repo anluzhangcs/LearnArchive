@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab-list{
+            background-color: #999;
+            width: 500px;
+            height: 50px;
+            margin: 100px auto;
+        }
+        .tab-list li {
+            list-style: none;
+            float: left;
+            margin:12px 20px;
+        }
+        .current{
+            background-color: red;
+        }
+        .tab-list a {
+            text-decoration: none;
+            color: #333;
+        }
+        .tab-info{
+            width: 500px;
+            height:100px;
+            margin: 0 auto;
+            /* background-color: blue; */
+        }
+        .item{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab-list">
+            <ul>
+                <!-- <li><a href="javacript:;">商品分类</a></li>
+                <li><a href="javacript:;">购物保障</a></li>
+                <li><a href="javacript:;">售后服务</a></li>
+                <li><a href="javacript:;">资质证照</a></li> -->
+                <li class="current">商品分类</li>
+                <li>购物保障</li>
+                <li>售后服务</li>
+                <li>资质证照</li>
+            </ul>
+        </div>
+        <div class="tab-info">
+            <div class="item show">商品分类页面</div>
+            <div class="item">购物保障页面</div>
+            <div class="item">售后服务页面</div>
+            <div class="item">资质证照页面</div>
+        </div>
+    </div>
+    <script>
+        var lists = document.querySelector('.tab-list').querySelectorAll('li');
+        // console.log(lists);
+        var items = document.querySelectorAll('.item');
+        // console.log(items);
+        for (var i=0; i<lists.length; i++) {
+            //给Tab加上index属性 便于判断这是哪个Tab
+            lists[i].setAttribute('index',i);
+            lists[i].onclick = function() {
+                //设置Tab栏  排他思想
+                for(var i=0;i<lists.length; i++) {
+                    lists[i].className = '';
+                }
+                this.className = 'current';
+
+                //设置下面显示
+                //得到当前点击的是哪一个Tab
+                var index = this.getAttribute('index');
+                for(var i=0; i<items.length; i++) {
+                    items[i].className = 'item';
+                }
+                items[index].className = 'show';
+            }
+        }
+    </script>
+</body>
+</html>

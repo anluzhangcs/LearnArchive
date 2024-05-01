@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Lorem ipsum dolor sit amet consectetur.</li>
+        <li>Lorem ipsum dolor sit amet consectetur.</li>
+        <li>Lorem ipsum dolor sit amet consectetur.</li>
+        <li>Lorem ipsum dolor sit amet consectetur.</li>
+        <li>Lorem ipsum dolor sit amet consectetur.</li>
+    </ul>
+    <ol id="demo">
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+    </ol >
+    <script>
+        /*
+            getElementsByTagName()
+            -通过标签名获取元素集合
+            -参数大小写敏感的字符串
+            -返回值为伪数组
+         */
+        var list = document.getElementsByTagName('li');
+        console.log(list);
+        console.log(list[0]);
+        console.dir(list[0]);
+        console.log(typeof list[0]); //伪数组里的具体数据也是object
+        /*
+            获取父元素的某些子元素
+            element.getElementsByTagName()
+            -父元素必须确定的单一元素 
+         */
+        var t = document.getElementById('demo');  //首先得到父元素
+        console.log(t);
+        var list2 = t.getElementsByTagName('li') //
+        console.log(list2);
+        console.log(list2[0]);
+    </script>
+</body>
+</html>

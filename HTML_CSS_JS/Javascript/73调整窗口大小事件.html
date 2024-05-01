@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo{
+            width: 200px;
+            height: 200px;
+            background-color: #baf;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="demo"></div>
+    <script>
+        // 如果script要写在其他地方 代码必须写在load事件内
+        window.addEventListener('load',function(){
+            //页面加载完毕后 才执行
+            
+            window.addEventListener('resize',function(){
+                //resize 调整窗口尺寸事件
+                //window.innerWidth 当前窗口宽度
+                // console.log(window.innerWidth);
+                var demo = document.querySelector('div');
+                if(window.innerWidth<900){
+                    demo.style.display = 'none'
+                } else{
+                    demo.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

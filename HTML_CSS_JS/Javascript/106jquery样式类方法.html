@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+    <style>
+        .demo{
+            width: 200px;
+            height:200px;
+            background-color: lightseagreen;
+        }
+        .change{
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(function(){
+            $("div").click(function(){
+                //addClass() 添加类
+                // $(this).addClass('change');
+                //removeClass() 移除类
+                // $(this).removeClass('demo');
+                // toggleClass()切换类  先判断其中是否有这个类 没有则替换 有则恢复原来的类
+                $(this).toggleClass('change');
+            });
+        });
+    </script>
+    <div class="" style="width: 200px;height: 200px;"></div>
+    <div class="demo"></div>
+</body>
+</html>

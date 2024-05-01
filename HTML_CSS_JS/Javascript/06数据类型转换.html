@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //注：从输入拿到的值全为字符串类型
+        var src=prompt('Please write the good price');
+        // 转换为字符串
+            // toString()转换
+        var num1=10.8;
+        console.log(num1.toString());
+        //String()强制转换
+        console.log(String(3.14));
+        // +运算隐式转换
+        console.log(5.12+'');
+
+        //转换为数值型
+        /*
+        parseInt()  转换为整数
+        parseFloat() 转换为浮点数
+         */
+        console.log(parseInt(src));
+        console.log(parseFloat(src));
+        //Number()强制转换
+        console.log(Number(src));
+        //使用- * / 等运算
+        console.log(src-0);
+        console.log(src*1);
+        console.log(src/1);
+
+        /* 转换为Boolean
+            -使用Boolean()
+            -除  ''   0   null   NaN   undefined 为false 其它都为true
+         */
+        console.log(Boolean(''));
+        console.log(Boolean(0));
+        console.log(Boolean(null));
+        console.log(Boolean(NaN));
+        console.log(Boolean(undefined));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

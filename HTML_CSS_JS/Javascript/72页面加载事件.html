@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            页面加载事件 
+            -window.onload  等页面加载完毕之后执行事件  
+            -document.addEventListener('DOMContentLoaded',function(){}
+                DOM 元素加载完毕后执行  不包括css 图片 flash 等
+         */
+        //script 可以写在文档任何地方
+        window.addEventListener('load',function(){
+            //当页面加载完侯执行
+            // var btn = document.querySelector('button');
+            // btn.addEventListener('click',function(){
+            //     alert('hello world');
+            // });
+            alert('Page loaded');
+        });
+        document.addEventListener('DOMContentLoaded',function(){
+            // 比page loaded 先执行
+            alert('DOM Content Loaded');
+        })
+    </script>
+    <button>点击</button>
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            高度塌陷：
+            对于没有指定height的元素，它的height会被子元素所撑开
+            当子元素设置浮动时，父元素的高度就会塌陷
+            造成布局混乱
+            -解决方案：
+            打开元素BFC（元素隐含属性，块状元素格式化环境）
+                -开启BFC之后，元素变为一个独立的区域，特性发生改变  
+                打开方式：
+                    -设置float  （不推荐） 
+                        此时父元素会包含子元素 但宽度发生改变 且下面元素会上去   
+                    -设置display:inline-block(不推荐)
+                        此时父元素会包含子元素 但宽度发生改变 
+                    -设置overflow
+                        一般方法就是：overflow：hidden
+         */
+        .outer {
+            /* background-color: yellow; */
+            border: 10px red solid;
+            /* float:left; */
+            /* display:inline-block; */
+            /* overflow: auto; */
+            overflow:hidden;
+
+        }
+
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            float: left;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+    <div class="box2"></div>
+</body>
+
+</html>

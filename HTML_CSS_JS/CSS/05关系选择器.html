@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <!-- 
+        子元素选择器
+            作用：选中父元素直接对应的子元素
+            语法：父元素 > 子元素
+        后代选择器
+            作用：选择指定父元素的所有后代元素
+            语法 父元素 子元素
+
+     -->
+    <!-- <style>
+        /* div>span{
+            color:fuchsia;
+            text-align:center;
+        } */
+        /* div span{
+            color:gold;
+            font-size:20px;
+        } */
+        /* div>p>span{
+            color:gold;
+        } */
+        /* div>p.box{
+            color:gold;
+        }
+    </style> */ -->
+
+    <!-- 
+        兄弟选择器
+        选择下一个兄弟,如果下一个兄弟不是所选择的，则选不中
+            语法：兄弟元素+下一个兄弟
+        选择下一个的所有兄弟
+            语法： 兄弟元素~下一个兄弟
+     -->
+     <style>
+         div+span{
+             color:gold;
+         }
+         span#sec~p{
+             color:hotpink;
+         }
+     </style>
+</head>
+<body>
+    <span>我是div外部的span2元素</span>
+    <div>
+        <span id="sec">我是div中的span元素</span>
+        <p class="box">
+            我是div中的p元素
+            <span>
+                我是p中的span元素
+            </span>
+        </p>
+        <p>我是p1元素</p>
+        <p>我是p2元素</p>
+        <p>我是p3元素</p>
+    </div>
+    <p>我是p4元素</p>
+    <span>我是div外部的span元素</span>
+</body>
+</html>

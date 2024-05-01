@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js">
+        /*
+        引入jQuery库
+            jQuery：就是一个js文件 里面封装了许多函数 比原生js更好用
+         */
+    </script>
+    <style>
+        .demo{
+            width: 200px;
+            height: 200px;
+            background-color: #baf;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // 同样 要想script写在文档任何地方 必须注意script要先加载基本DOM元素
+        //入口函数 DOM加载完后执行 同原生js的DOM
+        $(function(){
+            $('div').hide();
+        })
+        /*
+            $为jQuery的别称 也是jQuery的顶级对象 
+         */
+    </script>
+    <div class="demo"></div>
+</body>
+</html>

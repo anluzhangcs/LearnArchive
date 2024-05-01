@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+</head>
+<body>
+    <script>
+        $(function(){
+            // 选取所有的li
+            // $("li").css("color","pink");  
+            // 选取ul下的li
+            // $("ul li").css("font-size","18px");
+            //选取ul下的第一个元素
+            // $("ul :first").css("font-weight","bold");
+            //选取ul下的第一个li元素
+            // $("ul li:first").css("color","red");
+            //选取ul下的第几个元素 :eq()
+            // $("ul li:eq(2)").css("color","red");
+            //选取偶数:even 奇数:odd
+            $("ul li:odd").css("color","red");
+        });
+    </script>
+    <ul>
+        <span>wo shi span</span>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem, ipsum dolor.</li>
+    </ul>
+    <ol>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+    </ol>
+</body>
+</html>

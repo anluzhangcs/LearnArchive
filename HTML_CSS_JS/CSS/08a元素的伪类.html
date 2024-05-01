@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            需要使链接在不同状态下出现不同颜色 就不能用类选择器
+            而要用伪类选择器
+         */
+         /* 
+            :link 表示没访问过的链接（正常链接）        
+          */
+        a:link{
+            color:chartreuse;
+        }
+        /* 
+        ：visit
+            表示访问过的链接
+            由于隐私原因 只能改变颜色属性
+         */
+        a:visit{
+            color:cornflowerblue;
+        }
+        /* 
+            :hover
+            表示鼠标移入时的状态
+         */
+         a:hover{
+             color:cyan;
+             font-size:40px;
+         }
+         /* 
+            :active
+            表示鼠标点击时的状态
+          */
+        a:active{
+            color:yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com">访问过的链接</a><br/>
+    <a href="https://www.baidu123.com">没访问过的链接</a>
+
+</body>
+</html>

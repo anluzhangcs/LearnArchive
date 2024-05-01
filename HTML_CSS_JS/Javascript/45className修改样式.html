@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo {
+            width: 200px;
+            height: 200px;
+            background-color: #baf;
+        }
+        .change{
+            background-color: #bfa;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">hello JavaScript</div>
+    <script>
+        var demo = document.querySelector('.demo');
+        /*
+            className 修改样式属性
+            -适用于要修改的特别多
+            -通过类名来修改 而不是内联
+            -保留原本有类时 修改时要加上原本的类
+            -class 为关键字 故使用className
+         */
+         demo.onclick = function () {
+             
+             this.className = 'demo change';
+         }
+    </script>
+</body>
+</html>

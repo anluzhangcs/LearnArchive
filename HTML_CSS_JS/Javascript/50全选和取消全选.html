@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 500px;
+            margin: 100px auto;
+            border:1px solid black;
+            border-collapse: collapse;
+        }
+        table td{
+            height: 50px;
+            border:1px solid black;
+            text-align: center;
+        }
+        thead tr{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    <input type="checkbox" name="all" id="mas">
+                </td>
+                <td>商品</td>
+                <td>价格</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="only" id=""></td>
+                <td>Ipad Pro</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="only" id=""></td>
+                <td>Ipad Air</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="only" id=""></td>
+                <td>Ipone 12</td>
+                <td>9000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="only" id=""></td>
+                <td>Apple Wacth</td>
+                <td>2000</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var mas = document.getElementById('mas');
+        var sals = document.querySelector('tbody').querySelectorAll('input');
+        mas.onclick = function() {
+            //通过全选框的标志mflag实现
+            /* if (mflag == 0)
+            {
+                for(var i=0; i<sals.length; i++) {
+                    sals[i].checked = true;
+                }
+                mflag = 1;
+            } else{
+                for(var i=0; i<sals.length; i++) {
+                    sals[i].checked = false;
+                }
+                mflag = 0;
+            } */
+            //优化
+            for(var i=0; i<sals.length; i++) {
+                //下按钮的状态跟随全选框的状态
+                sals[i].checked = this.checked;
+            }
+        }
+        //小按钮影响全选框
+        for(var i=0; i<sals.length; i++) {
+            sals[i].onclick = function () {
+                var mflag = true;
+                for (var i = 0; i < sals.length; i++) {
+                    if (sals[i].checked == false) {
+                        mflag = false;
+                    }
+                }
+                mas.checked = mflag;           
+            }
+        }
+        
+    </script>
+</body>
+</html>

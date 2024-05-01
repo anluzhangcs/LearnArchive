@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var unum;
+        var rnum = getRandom(1,10);
+        function getRandom(min,max) {
+            return Math.floor(Math.random()*(max-min+1)+min);
+
+        }
+        while (1) {
+            unum = prompt('please input your num');
+            if(unum==rnum){
+                alert('猜对啦！')
+                break;
+            }
+            else if (unum>rnum) {
+                alert('数字大了,继续猜');
+            }
+            else {
+                alert('数字小了,继续猜');
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

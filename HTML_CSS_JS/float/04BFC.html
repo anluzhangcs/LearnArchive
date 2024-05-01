@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        开启BFC特点
+            -不会被浮动元素所覆盖
+            -子元素和父元素的外边距会区别开，不会重叠
+            -开启BFC的元素可以包含浮动的子元素
+         */
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+            float:left;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin-top:100px;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: silver;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+</body>
+</html>

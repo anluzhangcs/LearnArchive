@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        var demo = document.querySelector('div');
+        //获取url的参数  location.search
+        var tmp = location.search;  
+        // console.log(location.search);  //?username=anluzhangcs
+        //1.去除？ 裁剪字符串 从下标1开始 到最后
+        tmp = tmp.substr(1);  //username=anluzhangcs
+        // console.log(tmp);
+        //2.将字符串分割为数组
+        var arr = tmp.split('=');
+        // console.log(arr);  // ["username", "anluzhangcs"]
+        //3.获取username的值 并显示
+        demo.innerHTML = arr[1]+'欢迎您！';
+    </script>
+</body>
+</html>

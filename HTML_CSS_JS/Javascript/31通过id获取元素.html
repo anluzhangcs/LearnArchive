@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        DOM 文档对象模型
+        document 文档
+        element 元素    文档中每个标签都是元素
+        Node    节点    文档中所有内容都是节点
+     -->
+    <div id="time">2021-08-05</div>
+    <!-- 
+        因为文档document从上至下加载 要在脚本中获取元素 必须将脚本写在元素后
+     -->
+    <script>
+        /*
+        getElenmentById()
+            get   elenment(元素)  By(通过) Id
+            参数：大小写敏感的字符串 故要加 ''
+            返回值：对象 
+         */
+        var timer = document.getElementById('time');
+        console.log(timer);
+        console.log(typeof timer);
+        console.dir(timer);  //便于
+    </script>
+</body>
+</html>

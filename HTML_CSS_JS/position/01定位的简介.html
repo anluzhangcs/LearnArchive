@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            /*
+            定位：在不影响其它元素的情况下改变位置，更高级的布局
+            属性：position
+            可取值：
+                static 默认值，没有开启定位
+                relative 相对定位
+                absolute 绝对定位
+                fixed  固定定位
+                sticky 粘滞定位
+
+            relative 相对定位
+                -相对定位的定位位置即为元素初始位置 即相对自己
+                -相对定位会使元素的层级更高
+                -相对定位并不会脱离文档流
+                -相对定位开启后元素的性质没有改变
+                    块元素依旧独占一行 相当于灵魂出窍，肉身还占据位置
+             */
+            position: relative;
+            /*
+            偏移量：
+            定位元素和定位位置间的距离
+                left right  确定水平位置
+                top bottom  确定垂直距离 
+             */
+            left:200px;
+            top:-200px;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+
+</body>
+</html>

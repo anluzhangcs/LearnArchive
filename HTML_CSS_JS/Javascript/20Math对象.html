@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //常用属性
+        console.log(Math.PI);
+        console.log(Math.LN10);
+        console.log(Math.E);
+        //常用方法
+        //返回绝对值
+        console.log(Math.abs(-3.12));
+        //取小于等于这个数的最小整数
+        console.log(Math.floor(1.1));
+        //取大于等于这个数的最大整数
+        console.log(Math.ceil(1.1));
+        //四舍五入
+        console.log(Math.round(1.6));
+        //最大值或最小值
+        console.log(Math.max(11,3));
+        console.log(Math.min(11,3));
+        //返回平方根
+        console.log(Math.sqrt(16));
+        //返回随机数
+        //默认返回[0，1) 之间的随机小数
+        console.log(Math.random());
+        //进行缩放 得到两个数之间的随机数
+        function getRandom(min,max) {
+            return Math.random()*(max-min) +min;
+        }
+        console.log(getRandom(0.9,10.1));
+        //进行缩放 得到两个数之间的随机整数
+        function getRandomInt(min,max) {
+            return Math.floor(Math.random()*(max-min+1) +min);
+        }
+        console.log(getRandomInt(0.9,10.1));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

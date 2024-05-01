@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        .box2{
+            width: 500px;
+            height: 500px;
+            background-color: seagreen;
+            position: relative;
+        }
+        .box3{
+            width: 300px;
+            height: 300px;
+            background-color: springgreen;
+        }
+        .box4{
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+            position:fixed;
+            top:0;
+            left:0;
+            /*
+            固定定位 fixed
+                -一种特殊的绝对定位，和绝对定位大部分特性一样
+                -唯一不同的是定位位置的不同
+                -固定定位会提高元素层级
+            定位位置：
+                浏览器的视口，不会随滚动条滚动改变
+            
+             */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">
+        2
+        <div class="box3">
+            3
+            <div class="box4">4</div>
+        </div>
+    </div>
+</body>
+</html>

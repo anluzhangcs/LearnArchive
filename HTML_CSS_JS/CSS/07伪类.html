@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- 
+    伪类（特殊的类，不存在）
+    -用来表示元素的特殊状态
+        如第一个子元素 被点击的元素等等
+    -伪类一般用:开头
+        first-child 第一个子元素
+        last-child 最后一个子元素
+        nth-child(n) 第n个子元素 
+            n从0到正无穷
+            2n/even 代表双数
+            2n+1/odd 代表奇数
+        first-of-type 类型的第一个
+        last-of-type 类型的最后一个
+        nth-of-type(n)
+
+        :not() 否定类 将选中的元素去除
+ -->
+ <style>
+      /* 
+        前面没有li 是列表中的第一个元素
+        有li 是列中第一个元素且为li
+      */
+
+     /* ul>li:first-child{
+         color:blueviolet;
+     } */
+    
+    /* ul>:first-child{
+        color:blueviolet;
+    } */
+     /* ul>li{
+        color:blueviolet;
+     } */
+     /* ul>li:nth-child(3){
+        color:blueviolet;
+     } */
+     ul>:not(:nth-of-type(1)){
+        color:crimson;
+     }
+ </style>
+</head>
+<body>
+    <ul>
+        <span>第0个</span>
+        <li>firstt</li>
+        <span>第三个</span>
+        <li>second</li>
+        <li>three</li>
+        <li>four</li>
+        <li>five</li>
+        <li>six</li>
+    </ul>
+</body>
+</html>

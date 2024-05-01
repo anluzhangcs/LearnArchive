@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        audio 音频标签
+        属性：
+            src 指定路径
+            width 宽度
+            height 高度
+            controls 控制窗口
+            autoplay 自动播放
+     -->
+     <!--不是一种好方式 容易造成不兼容问题  -->
+     <audio src="音视频/audio.mp3" controls ></audio>
+     <!-- 
+         <audio>
+             <source>
+         <audio>
+        这种模式兼容性更好
+        -加载音视频/audio.mp3 不成功
+        -加载音视频/audio.ogg 不成功
+        -显示 对不起 您的浏览器不兼容
+      -->
+     <audio controls>
+         <!-- 有了<embed> 就不需要提示语句了 -->
+            <!-- 对不起 您的浏览器不兼容 -->
+            <source src="音视频/audio.mp3">
+            <source src="音视频/audio.ogg">
+            <!-- 基本都能兼容下面这种写法 -->
+            <embed src="音视频/audio.mp3" type="audio/mp3"
+            width=200 height=50>
+     </audio>
+
+     <!-- 
+         vedio 视频标签 和audio基本一致
+      -->
+      <video controls>
+          <source src="音视频/flower.mp4">
+          <source src="音视频/flower.webm">
+          <embed src="音视频/flower.mp4" type="video/mp4" 
+          width=200 height=150>
+      </video>
+
+      <!-- 还可以通过ifframe引入 -->
+      <iframe width=500 height=300 frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=i00360hx6ms" allowFullScreen="true"></iframe>
+</body>
+</html>

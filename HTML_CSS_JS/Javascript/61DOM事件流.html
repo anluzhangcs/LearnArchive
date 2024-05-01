@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 200px;
+            height: 200px;
+            background-color: #baf;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        /*
+            DOM事件流 三个阶段：
+            -捕获阶段：事件从document -> html -> body -> father -> son 逐一判断是否有此事件的处理程序 有则执行 没有则不执行
+            -当前目标阶段
+            -冒泡阶段：与捕获阶段相反 
+         */
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        // addEventListener 第三个参数为true 为捕获阶段 false为冒泡阶段  不写默认为false
+        function fn1() {
+            alert('son')
+        }
+        function fn2() {
+            alert('father')
+        }
+        // son.addEventListener('click',fn1,true);
+        // father.addEventListener('click',fn2,true);  //先弹出father再弹出son 说明father监听器在son之前执行
+        //冒泡阶段
+        son.addEventListener('click',fn1,false);
+        father.addEventListener('click',fn2);
+    </script>
+</body>
+</html>

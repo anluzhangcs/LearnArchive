@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            /* 
+            内容区
+             */
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            /* 
+            设置边框
+                border-width  边框宽度
+                    默认值为3px一般
+                    boder-top-width right bottom left
+                border-color  边框颜色
+                    默认值为color颜色
+                    同border-width
+                border-style  边框样式 
+                    默认值为none 无边框
+                    solid  实线
+                    dashed 虚线
+                    dotted 点状线
+                    double 双框线
+             */
+            /* border-width:10px;
+            border-color:red;
+            border-style:double; */
+            /* 
+            简写边框各种属性
+             */
+            border:10px red solid;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        CSS将页面中的所有元素都设置为盒子模型
+            内容区：content
+            边框：border
+            内边距：padding
+            外边距：margin
+     -->
+     <div class="box1"></div>
+</body>
+</html>

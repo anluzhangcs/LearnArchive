@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var money = 200;
+        var flag = prompt('Please input your choice:');
+        while (flag) {
+            switch (flag) {
+                case '1':
+                    var tmp = prompt('Please input your load');
+                    money += Number(tmp);
+                    alert('现在余额为：' + money + '元');
+                    break;
+                case '2':
+                    var tmp = prompt('Please input your qu');
+                    money -= tmp;
+                    alert('现在余额为：' + money + '元');
+                    break;
+                case '3':
+                    alert('现在余额为：' + money + '元');
+                    break;
+                case '4':
+                    alert('正在退出');
+                    
+                    break;
+            }
+            flag = prompt('Please input your choice:');
+            
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

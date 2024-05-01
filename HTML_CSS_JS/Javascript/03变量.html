@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //声明变量
+        var myname;
+        //将输入的值赋给变量
+        myname=prompt('Please write here');
+        //将变量输出
+        alert(myname);
+
+        //变量的几种特殊情况
+        //声明后没赋值直接使用  结果为undefined 没有定义
+        var myaddress;
+        console.log(myaddress);
+        //没声明就赋值使用    结果为18 可以不声明使用 但不推荐
+        age=18;
+        console.log(age);
+        // 没有声明直接使用  报错 不能这样使用
+        // 注：JavaScript被浏览器执行时时逐行翻译 当出现错误时 下面的语句不会执行
+        console.log(tel);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 数组的创建
+            // new方法创建
+        var narr = new Array();    //创建空数组
+        var narr1= new Array(4);   //创建长度为4的数组
+        console.log(narr.length);
+        console.log(narr1.length);
+            //字面量创建 常用创建方法 即一眼就知道这是数组
+        var arr = [];      //创建空数组
+        var arr1 = [1,2,'32r','hell',true];  //创建长度为5的数组
+        //注：数组中的元素类型不单一 可以混合
+        console.log(arr.length);
+        console.log(arr1.length);
+
+        // 数组元素的增加
+            //-可以通过修改length
+        arr.length=3;
+        console.log(arr.length);
+        arr[0] = 'zh';
+        arr[1] = 'an';
+        console.log(arr[0],arr[1],arr[2],arr[3])
+        // 注：输出多个数据可以用  , 隔开
+        // alert(arr[0],arr[1]);    alert警告信息不行
+            // -可以直接通过下标增加
+        arr1[5] = 'solo';
+        console.log(arr1[5]);
+
+        //数组的遍历
+            //遍历输出
+        for(var i=0;i<arr1.length;i++){
+            console.log(arr1[i]);
+        }
+            //遍历创建数组
+        var a = [];
+        for(var i = 0;i<5;i++){
+            a[i] = i;
+            console.log(a[i]);
+        }
+
+        //遍历的几种用途
+        var sum = 0;
+        var src='';
+        var newArr = []; //定义新的空数组
+        var tmp; //定义临时变量
+            // 求和及平均值
+        for( i= 0;i<a.length;i++){
+            sum+=a[i];
+        }
+        console.log(sum);
+            //转换为字符串
+        for( i= 0;i<a.length;i++){
+            src+=a[i];
+        }
+        console.log(src);
+            //翻转数组
+        for(i = a.length-1 ; i>=0 ; i--){
+            newArr[newArr.length] = a[i];            
+        }
+        console.log(newArr[0]);
+            //数组排序-冒泡
+        for(i=0;i<a.length-1;i++){    //负责排序的趟数 length-1趟
+            for(var j=0;j<a.length-i-1;j++){     //负责比较次数
+                if(a[j]<a[j+1]){   //从大到小排序
+                    tmp = a[j+1];
+                    a[j+1] = a[j];
+                    a[j] = tmp;
+                }
+            }
+        }
+        for(var i = 0;i<5;i++){
+            console.log(a[i]);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

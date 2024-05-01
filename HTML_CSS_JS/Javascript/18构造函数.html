@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        构造函数用于批量创建对象
+            将对象共有的属性和方法封装到函数中
+        -必须使用new方法创建对象
+        -构造函数名必须以大写开头
+         */
+        function Singer(sname,age,sex) {
+            this.sname=sname;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (song){
+                console.log(song);
+            }
+        }
+        var obj = new Singer(); //没有传参 创建空对象
+        var ldh = new Singer('刘德华',54,'男');
+        var zxy = new Singer('张学友',58,'男');
+        console.log(ldh.sname);
+        console.log(zxy.sname);
+        ldh.sing('冰雨');
+        zxy.sing('正气歌');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        伪元素选择器 并不存在的元素 （特殊位置）  
+        ::first-letter 表示首字母 
+        ::first-line 表示第一行
+        ::selection 表示鼠标选择的
+        ::before 表示元素开头之前
+        ::after 表示元素结尾之后
+            -before和after必须结合content（内容）使用    
+         */
+        p::first-letter{
+            font-size:50px;
+        }
+        p::first-line{
+            color:teal;
+        }
+        p::selection{
+            color:thistle;
+        }
+        div::before{
+            content:'acb';
+            color:tomato;
+        }
+        div::after{
+            content:"jxjz";
+            color:turquoise;
+        }
+    </style>
+</head>
+<body>
+    <div>hello fucking ASP.Net</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aliquid asperiores molestias aut cumque facere nulla incidunt eius in,mollitia hic possimus sint, obcaecati quae quibusdam ipsam corporis fuga repudiandae!</p>
+
+</body>
+</html>

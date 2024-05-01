@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            color: #999;
+        }
+        .change{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="Please input here...">
+    <script>
+        //键盘按下s时 文本框获取焦点
+        var search = document.querySelector('input');
+        document.addEventListener('keyup',function(e){
+            // console.log(e.keyCode);  //用来确定所需键的ASCII
+            if (e.keyCode == 83) {
+                search.focus();
+            }
+            
+        });
+        //获得焦点后清楚原有内容
+        search.addEventListener('focus',function(){
+            this.value = '';
+            // this.className = 'change';
+            search.className = 'change';
+        });
+        // 失去焦点后 有信息显示原有信息 无信息显示提示信息
+        search.addEventListener('blur',function(){
+            if (this.value == '' ) {
+                this.value = 'Please input here...';
+            }
+            
+        });
+    </script>
+</body>
+</html>

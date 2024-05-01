@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo,.nav{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo"></div>
+    <div class="nav">
+        hello world!!!
+        <span>fuck you</span>
+    </div>
+    <script>
+        var demo = document.querySelector('.demo');
+        var nav = document.querySelector('.nav');
+        /*
+        -都为读写
+        innerText 不识别html标签  不常用  不保留html标签，空格，换行
+        innerHTML  识别html标签   W3C标准 常用  保留html标签，空格，换行
+         */
+        // demo.innerText = '<b>今天<b>是个好日子';
+        demo.innerHTML = '<strong>今天</strong>是个好日子';
+        console.log(nav.innerHTML);
+        console.log(nav.innerText);
+    </script>
+</body>
+</html>

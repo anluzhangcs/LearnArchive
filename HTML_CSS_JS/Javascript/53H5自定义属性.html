@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div getTime="20" id="test"></div>
+    <script>
+        var demo = document.querySelector('div');
+        //自定义属性用element.属性名不管用
+        console.log(demo.getTime);
+        //getAttribute() 兼容性强 既可以得内置属性 也可以得自定义属性
+        console.log(demo.getAttribute('id'));
+        /*
+            为了便于区分内置属性和自定义属性 H5自定义属性规则
+            以data-开头的都为自定义属性 
+         */
+        demo.setAttribute('data-index','2');
+        console.log(demo.getAttribute('data-index'));
+        //H5新增获取自定义属性方法
+        //demo.dataset.属性名
+        //dataset为以data-开头的所有自定义属性的集合
+        console.log(demo.dataset.index);
+        demo.setAttribute('data-zhang-san','zhangsan');
+        //当data-后面有很多-连接时 并采用dataset.属性名输出时 采用驼峰命名法
+        console.log(demo.getAttribute('data-zhang-san'));
+        console.log(demo.dataset.zhangSan);
+    </script>
+</body>
+</html>

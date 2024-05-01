@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        函数：
+            声明函数
+            function 函数名() {
+                函数体
+            } 
+            调用函数
+            函数名();
+         */
+        function sayHi(){
+            console.log('hello~');
+        }
+        sayHi();
+
+        /*
+        函数的参数
+        形参为不用声明的变量 默认为undefined
+        function 函数名(形参1,形参2...)      //函数的形参可以不声明 
+         */
+        function cook(meal){
+            console.log(meal);
+        }
+        cook('milk and eag');
+        cook('meat and soup');
+
+        /*
+        形参与实参匹配问题：
+            -正常
+            -实参多余形参   取到形参·
+            -形参多于实参   数字+undefined为NaN
+         */
+        function getSum(n1,n2){
+            console.log(n1+n2);
+        }
+        getSum(1,2);
+        getSum(1,2,3);
+        getSum(1);
+        
+        /*
+        arguments 的使用  实参个数不确定时
+            -只在函数使用 为函数内置对象
+            -用于保存实参
+            -是伪数组
+                -有length属性
+                -有下标，可以遍历
+         */
+        function fun() {
+            var max = arguments[0];
+            for(var i=1;i<arguments.length;i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        // var res = fun(11,2,3);
+        // var res = fun(1,2,45,3);
+        var res = fun(1,2,3,4,100);
+        console.log(res);
+        /*
+        函数return
+            -返回多个值，可以返回一个数组，变相返回多个值 
+            -有return 返回return后的值；没有return或者return后为空，则undefined
+            -
+         */
+        function fun1(n1,n2) {
+            // return [n1+n2,n1-n2,n1*n2,n1/n2];
+            return ;
+        }
+        var re = fun1(2,1);
+        console.log(re);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

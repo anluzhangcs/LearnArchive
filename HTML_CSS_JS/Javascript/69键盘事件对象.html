@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 有事件就会有事件对象
+        // keydown keyup 不区分大小写
+        //keypress 区分大小写
+        document.addEventListener('keydown',function(e){
+            console.log(e.keyCode);
+        });
+        document.addEventListener('keyup',function(e){
+            //keyCode 返回当前按下键的ASCII
+            console.log(e.keyCode);
+        });
+    </script>
+</body>
+</html>

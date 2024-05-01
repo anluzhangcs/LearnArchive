@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        target属性：表示在当前页面跳转还是在新标签页跳转
+        _self 默认 在当前跳转
+        _blank 在新标签页中跳转
+     -->
+     <a href="https://www.baidu.com" target="_self">当前跳转</a>
+     <br/>
+     <a href="https://www.baidu.com" target="_blank">新标签页中跳转</a>
+     <br/>
+     <!-- 
+         要想先不跳转 占位符 可以用
+      -->
+      <a href="javacript:;">不变化</a>
+     <br/>
+     <a href="#bottom">跳转底部</a><br/>
+    <!-- 
+        要想指定跳到某个位置 需要id属性
+        id=""  每个元素只有唯一一个id
+        id  以英文字母开头
+        href="#id" 跳转到id位置
+        -->    
+     <a href="#p3" >跳到第三段</a>
+     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed inventore tempore fugiat repellat obcaecati quos nulla, vero error vitae earum optio molestias enim dignissimos quas neque exercitationem veritatis quibusdam accusantium.</p>
+     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil quaerat ad eligendi neque quasi, distinctio id ut dignissimos in assumenda error ea, placeat facere dolor quo accusamus voluptate saepe? Molestias.</p>
+     <p id="p3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur similique maxime autem magnam quo unde, harum illum dolore, rem mollitia consequatur voluptatum obcaecati repellendus nulla iure aut in architecto amet.</p>
+     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur similique maxime autem magnam quo unde, harum illum dolore, rem mollitia consequatur voluptatum obcaecati repellendus nulla iure aut in architecto amet.</p>
+     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur similique maxime autem magnam quo unde, harum illum dolore, rem mollitia consequatur voluptatum obcaecati repellendus nulla iure aut in architecto amet.</p>
+     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur similique maxime autem magnam quo unde, harum illum dolore, rem mollitia consequatur voluptatum obcaecati repellendus nulla iure aut in architecto amet.</p>
+     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur similique maxime autem magnam quo unde, harum illum dolore, rem mollitia consequatur voluptatum obcaecati repellendus nulla iure aut in architecto amet.</p>
+     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur similique maxime autem magnam quo unde, harum illum dolore, rem mollitia consequatur voluptatum obcaecati repellendus nulla iure aut in architecto amet.</p>
+     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur similique maxime autem magnam quo unde, harum illum dolore, rem mollitia consequatur voluptatum obcaecati repellendus nulla iure aut in architecto amet.</p>
+     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur similique maxime autem magnam quo unde, harum illum dolore, rem mollitia consequatur voluptatum obcaecati repellendus nulla iure aut in architecto amet.</p>
+     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur similique maxime autem magnam quo unde, harum illum dolore, rem mollitia consequatur voluptatum obcaecati repellendus nulla iure aut in architecto amet.</p>
+    <!-- 
+       href="#"  跳转当前页面某个位置
+       默认会跳到顶部位置
+    -->
+    <a id="bottom" href="#top">跳到顶部</a>
+    <br/>
+   
+
+</body>
+</html>

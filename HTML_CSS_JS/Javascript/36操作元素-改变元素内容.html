@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .time1,.time2{
+            width: 200px;
+            height: 50px;
+            background-color: #bfa;
+        }
+        .time2{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        DOM操作元素
+     -->
+    <button id="btn">showTime</button>
+    <div class="time1">Now the time is</div>
+    <div class="time2"></div>
+    <script>
+        /*
+        点击按钮显示当前时间
+            -事件源  按钮
+            -事件类型 onclick
+            -事件处理程序 改变文本内容 
+         */
+        var btn = document.getElementById('btn');
+        var time1 = document.querySelector('.time1');
+        function showMyDate(date) {
+            var xinqi = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+            var year = date.getFullYear();     //获取年份
+            var month = date.getMonth()+1;  //获取实际月份要 -1
+            var dates = date.getDate()    //获取日
+            var day = date.getDay();       //获取星期几 星期 0-6 0表示星期天
+            var h = date.getHours();
+            h = h <10 ? '0'+h : h;
+            var m = date.getMinutes();
+            m = m < 10 ? '0'+m : m;
+            var s = date.getSeconds();
+            s = s <10 ? '0'+s : s
+            var str = '';
+            str = '现在是北京时间：' + year + '-' + month + '-' + dates + ' ' + xinqi[day] + ' ' + h + ':' +m + ':' + s;
+            return str;
+        }
+        btn.onclick  = function () {
+            // var nowtime = 
+            time.innerHTML = showMyDate(new Date('2019-12-11 12:00:00'));
+            // time1.innerText = showMyDate(new Date('2019-12-11 12:00:00'));
+        }
+        //加载页面时直接显示时间
+        var time2 = document.querySelector('.time2');
+        time2.innerHTML = showMyDate(new Date());
+    </script>
+</body>
+</html>

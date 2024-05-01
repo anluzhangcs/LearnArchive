@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 
+            网页有很多层 最底层的就是文档流
+            元素在文档流中进行排列
+            块元素：
+                width：默认为父元素的宽度
+                height：为自身内容撑满
+            行内元素：
+                width,height 均为自身内容填满
+                写满后换到下一行 从左往右
+         */
+        .box1{
+            /* width: 100px; */
+            background-color: orange;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="box1">我是div1</div>
+    <div class="box2">我是div2</div>
+    <span>我是span1</span>
+    <span>我是span2</span>
+</body>
+</html>

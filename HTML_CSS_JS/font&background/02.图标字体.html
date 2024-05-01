@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入css文件的作用实际上是引入图标字体文件 -->
+    <link rel="stylesheet" href="./fontawesome/css/all.css">
+    <style>
+        li{
+            list-style: none;
+        }
+        /* 通过伪元素使用图标字体 */
+        li::before{
+            content: '\f56b';
+            /* font-family: 'Font Awesome 5 Brands'; */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        图标字体：以字体的形式使用图标，而不是图片
+            优点：和设置字体一样修改大小颜色等
+                  矢量图，可以无限放大而不失真
+            使用方法：
+                1.下载图标字体文件
+                2.解压后将css和webfonts文件夹复制到所需要的项目文件夹中
+                3.引入css文件
+                4.通过类名使用图标字体
+     -->
+     <!-- 
+        em  强调斜体
+        i   斜体
+        i或者span标签一般用来显示图标字体
+     -->
+     <em>Lorem ipsum dolor sit amet.</em>
+     <br>
+    <i>Lorem ipsum dolor sit amet.</i>
+    <br>
+    <!-- 
+       <i class="fas fa-cat"></i> 通过类使用的基本格式
+        表示fab类下的...类
+        一般用fab或fas
+     -->
+    <i class="fab fa-accessible-icon"></i>
+    <i class="fas fa-cat" style="color: brown;font-size: 30px;"></i>
+    <i class="fas fa-bell"></i>
+     <!-- 
+         通过伪元素使用图标字体
+            1.通过before或after选中
+            2.在content中输入\+字体的编码，\为转义字符
+            3.设置font-family决定所在的字体族
+                fas：
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+
+                fab：
+                 font-family: 'Font Awesome 5 Brands';
+      -->
+    <ul>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+    </ul>
+    <!-- 
+        通过实体使用图标字体
+            格式：&#x图标编码;
+     -->
+     <span class="fas">&#xf1f6;</span>
+</body>
+</html>

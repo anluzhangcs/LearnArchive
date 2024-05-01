@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .t1{
+            /*align="center;" 用于内联样式 */
+            /* 设置表格居中 */
+            margin:0 auto;
+            width:50%;
+            border:1px solid black;
+            /* 边框间距离 */
+            /* border-spacing: 5px; */
+            /* 合并边框线 */
+            border-collapse: collapse;
+        }
+        td{
+            border:1px solid;
+            height:50px;
+            /* 设置水平居中 */
+            text-align: center;
+            /*
+             设置垂直居中
+                默认情况下元素在td中垂直居中
+             */
+            /* vertical-align: middle; */
+        }
+        /*
+        -tr不是table的子元素
+        没有指定tbody 所有tr都属于tbody 浏览器自动生成
+         
+         */
+        tbody >tr:nth-child(odd){
+            background-color: #bfa;
+        }
+    </style>
+<body>
+    <table class="t1">
+        <tr>
+            <td>序号</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>住址</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>孙悟空</td>
+            <td>18</td>
+            <td>花果山</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>猪八戒</td>
+            <td>28</td>
+            <td>高老庄</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>沙和尚</td>
+            <td>30</td>
+            <td>流沙河</td>
+        </tr>
+    </table>
+</body>
+
+</html>

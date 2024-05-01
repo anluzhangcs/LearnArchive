@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Layout/CSS/reset.css">
+    <title>Document</title>
+    <style>
+        .imglist{
+            width: 590px;
+            height: 470px;
+            margin:100px auto;
+            position: relative;
+        }
+        li{
+            position: absolute;
+        }
+        .imglist li:nth-child(4){
+            z-index: 2;
+        }
+        .points{
+            position:absolute;
+            z-index: 3;
+            bottom: 40px;
+            left: 20px;
+        }
+        .points a{
+            /* 开启浮动 横向排列 */
+            float:left;
+            /* display: block; */
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.6);
+            /* 使它变为圆点 */
+            border-radius: 50%;
+        }
+        .points a:hover{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <ul class="imglist">
+        <li><a href="javacript:;"><img src="img/05/1.jpg" alt=""></a></li>
+        <li><a href="javacript:;"><img src="img/05/2.jpg" alt=""></a></li>
+        <li><a href="javacript:;"><img src="img/05/3.jpg" alt=""></a></li>
+        <li><a href="javacript:;"><img src="img/05/4.jpg" alt=""></a></li>
+        <li><a href="javacript:;"><img src="img/05/5.jpg" alt=""></a></li>
+        <li><a href="javacript:;"><img src="img/05/6.jpg" alt=""></a></li>
+        <li><a href="javacript:;"><img src="img/05/7.jpg" alt=""></a></li>
+        <li><a href="javacript:;"><img src="img/05/8.jpg" alt=""></a></li>
+        <div class="points">
+            <a href="javacript:;"></a>
+            <a href="javacript:;"></a>
+            <a href="javacript:;"></a>
+            <a href="javacript:;"></a>
+            <a href="javacript:;"></a>
+            <a href="javacript:;"></a>
+            <a href="javacript:;"></a>
+            <a href="javacript:;"></a>
+        </div>
+    </ul>
+</body>
+</html>

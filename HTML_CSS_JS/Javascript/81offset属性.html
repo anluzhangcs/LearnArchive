@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            margin:100px;
+            position: relative;
+            background-color: #baf;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            margin:40px auto;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        //offsetTop 距离父元素顶部的距离 且父元素必须开启定位
+        //offsetLeft 距离父元素左部的距离
+        console.log(father.offsetTop);
+        console.log(father.offsetLeft);
+        console.log(son.offsetLeft);
+        console.log(son.offsetTop);
+    </script>
+</body>
+</html>

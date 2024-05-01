@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>跳转</button>
+    <div></div>
+    <script>
+        var btn = document.querySelector('button');
+        var show = document.querySelector('div');
+        //跳转页面 即更改页面的url
+        // btn.addEventListener('click',function(){
+        //     location.href = 'https://www.baidu.com/';
+        // });
+
+        //实现自动跳转 并显示提示信息
+        btn.addEventListener('click',function(){
+            //每次点击按钮 初始化计时器为5秒
+            var count = 5;
+            var timer = setInterval(function(){
+                
+                if (count<=5 && count>0) {
+                    show.innerHTML = '现在还有' + count + '秒跳转页面';
+                    count--;
+                }
+                if (count == 0) {
+                    location.href = 'https://www.baidu.com/';
+                }
+            },1000);
+        });
+    </script>
+</body>
+</html>

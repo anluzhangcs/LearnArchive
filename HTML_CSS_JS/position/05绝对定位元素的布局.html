@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 500px;
+            height: 500px;
+            background-color: #bfa;
+            position: relative;
+            /* 开启相对定位后，box1就成为了box2的包含块 */
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            position: absolute;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            margin:auto;
+            /*
+            水平布局：满足
+            left+right+margin-left/right+border-left/right+padding-left/right+width=包含块宽度
+            -left，right默认auto
+            -margin-left/right默认为0
+            -如果九个值没有auto，则right自动调整
+            -若有auto，则调整auto的值
+                可设置auto的值
+                margin，width
+             */
+            /*
+            垂直布局：满足
+            top+margin-top/bottom+border-top/bottom+height+bottom=包容块高度
+            与水平布局类似 
+             */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

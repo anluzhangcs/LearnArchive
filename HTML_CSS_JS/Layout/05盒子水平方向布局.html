@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width:800px;
+            height:200px;
+            background-color: lightpink;
+            border:10px red solid
+        }
+        .inner{
+            width:auto;
+            height:200px;
+            background-color: lightseagreen;
+            /* 
+            必须满足等式
+            margin-left+padding-left+border-left+width+padding-right+border-right+margin-right = 父元素的width
+            如果相加结果不满足 则称为过度约束
+            margin-left 默认值为0
+            border-left 默认值为0
+            padding-left 默认值为0
+            width   默认值为auto
+            padding-right 默认值为0
+            border-right  默认值为0
+            margin-right  由浏览器决定它的值使等式成立
+             */
+            margin-left:auto;
+            margin-right:auto;
+            /* 
+            有三个值可以为auto  width margin-left margin-right
+            一个为auto的情况
+                width:auto  全部充满
+                margin-left:auto    左边距为最大
+                margin-right：auto   右边距最大
+            二个为auto情况
+                只要width：auto   则全部充满
+                margin-left:auto;margin-right:auto;  居中平分
+            三个auto情况
+                全充满   
+            
+             */
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

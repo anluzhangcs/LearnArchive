@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grapa{
+            width: 500px;
+            height: 500px;
+            background-color: #baa;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background-color: lightseagreen;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+        }
+    </style>
+    <script src="jQuery.js"></script>
+</head>
+<body>
+    <script>
+        $(function(){
+            // parent()  获取父元素
+            console.log($(".father").parent());
+            //children()  直接子元素选择
+            console.log($(".father").children("p"));
+            // 后代选择器 find()
+            console.log($(".father").find("span"));
+            //siblings() 选择除了自己之外的兄弟元素
+            // $("ul .item").siblings().css("color","red");
+            //eq() 选择特定元素
+            $("ul li").eq(0).css("color","red");
+        });
+    </script>
+    <div class="grapa">
+        <div class="father">
+            <p>wo shi p
+                <span>我是p里的pan</span>
+            </p>
+            <span>wo shi span</span>
+            <div class="son"></div>
+        </div>
+    </div>
+    <ul>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li class="item">Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+    </ul>
+</body>
+</html>

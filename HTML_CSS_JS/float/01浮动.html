@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+         float 浮动：
+            none  不浮动
+            left  浮动到左侧
+            right 浮动到右侧
+        浮动特点
+            -设置left right后 元素脱离文档流 不在遵循等式 也不占据位置
+            -设置float 下一个元素会移到它的下面
+            -浮动元素水平上不会相互盖住 垂直上不会超过他上一个兄弟元素的高度
+        浮动可以设置水平排列页面
+         */
+        .box1{
+            width: 300px;
+            height: 200px;
+            background-color: #bfa;
+            float:left;
+        }
+        .box2{
+            width: 300px;
+            height: 200px;
+            background-color: yellow;
+            float:left;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            /* float:left; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

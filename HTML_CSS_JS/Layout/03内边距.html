@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color:#bfa;
+            border:10px solid red;
+            /* 
+            内边距：padding  内容区和边框间的距离
+                    -背景色会延伸至padding区域
+                    -padding会影响盒子的大小
+             */
+            padding:50px;
+            
+        }
+        /* 
+            使padding更明显
+         */
+        .inner{
+            width:100%;
+            height:100%;
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        盒子可见框大小由content padding border累加决定
+        
+     -->
+    <div class="box1">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

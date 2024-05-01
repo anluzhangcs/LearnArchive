@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        @font-face 使用来自服务器的字体
+            属性：
+            font-family：给从服务器下载字体起的名字
+            src：为服务器地址  .为文件所在根目录
+                              ..为文件所在根目录上一级
+        */
+        @font-face {
+            font-family: 'myfont';
+            src: url(./font/ZCOOLKuaiLe-Regular.ttf);
+        }
+        /*
+        字体：
+            color：字体颜色
+            font-size：字体大小
+            font-family：字体族
+                可取值：
+                    serif  衬线字体
+                    sans-serif 非衬线字体
+                    monospace  等宽字体
+                    fantasy   艺术字体
+                    cursive   草书
+                //以上为字体类别 一般写在字体族的最后 有浏览器来决定具体使用哪个字体
+
+        */
+        p.demo1{
+            color: red;
+            font-size: 30px;
+            font-family:myfont;
+            /*字体族可取多值，用逗号隔开，根据优先级依次使用*/
+        }
+        .demo2{
+            color:#bbf;
+            font-size: 30px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <p class="demo1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, explicabo.
+    </p>
+    <p class="demo2">
+        Lorem ipsum dolor sit amet.
+    </p>
+</body>
+</html>

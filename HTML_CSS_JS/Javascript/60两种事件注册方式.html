@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>demo1</button>
+    <button>demo2</button>
+    <script>
+        /*
+            element.type = function(){}  传统类型
+            -element 为要添加事件的元素
+            -type 为要添加事件的类型  onclick etc...
+            -同一个元素 同一个事件只能执行一个事件处理函数
+            
+            element.addEventListener(type,function(){})   常用类型 事件监听器
+            -element 为要添加事件的元素
+            -type 为要添加事件的类型  onclick etc...
+            -type 为字符串 且与传统注册不同 事件类型没有前面的on
+            -同一个元素 同一个事件可以执行多个不同事件处理函数
+         */
+        /*
+            移出事件
+            element.type = null 传统方式
+            element.removeEventListener(type,fn)
+                -type为事件类型
+                -fn为函数名
+         */
+        var btns = document.querySelectorAll('button');
+        btns[0].onclick = function () {
+            alert('how are you');
+        }
+        btns[0].onclick = function () {
+            alert('I am fine');   //覆盖前面的how are you
+            btns[0].onclick = null;  //移除事件
+        }
+        btns[1].addEventListener('click', function () {
+            alert('how are you');
+        });
+        btns[1].addEventListener('click',fn); //fn为函数名 不用调用
+        function fn() {
+            alert('I am fine');  //不会覆盖
+            btns[1].removeEventListener('click',fn); //移除I am fine事件
+        }
+
+    </script>
+</body>
+
+</html>

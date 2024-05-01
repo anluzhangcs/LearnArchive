@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function findMaxChar (str) {
+            var obj = {};
+            var max = 0;
+            var res;
+            for(var i=0;i<str.length;i++) {
+                var ch = str.charAt(i);
+                if (obj[ch]) {
+                    obj[ch]++;
+                } else {
+                    obj[ch]=1;
+                }
+            }
+            console.log(obj);
+            for (var k in obj) {
+                if (max < obj[k]) {
+                    max = obj[k];
+                    res = k;
+                }
+            }
+            console.log(max);
+            console.log(res);
+        }
+        findMaxChar('ahjasbchsaaa');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

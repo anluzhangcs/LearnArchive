@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="demo1"></div>
+    <div class="demo2"></div>
+    <div class="demo3"></div>
+    <script>
+        var demo2 = document.querySelector('.demo2');
+        //获取下一个兄弟节点  nextSibling
+        console.log(demo2.nextSibling);  //#text
+        //获取下一个兄弟元素节点 
+        console.log(demo2.nextElementSibling); //demo3
+        //获取上一个兄弟节点
+        console.log(demo2.previousSibling); //#text
+        console.log(demo2.previousElementSibling); //demo1
+    </script>
+</body>
+</html>

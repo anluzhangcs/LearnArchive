@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js">
+
+    </script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #baf;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <span>hello</span>
+    <script>
+        // jQuery对象 $获取 只能使用jquery方法
+        // $('div').hide();
+        //DOM对象 原生获取 只能使用原生js方法
+        var demo = document.querySelector('div');
+        demo.style.display = 'none';
+
+        /*
+            jQuery对象和dom对象相互转换 
+         */
+        //DOM对象
+        var span = document.querySelector('span')
+        // jQuery对象
+        $('span');
+        //DOM对象转换为jQuery对象 直接用$封装
+        $(span).innerHeight;
+        //jquery对象转换为DOM对象 jquery对象为伪数组
+        //1.$('span')[0]
+        // $('span')[0].hide();
+        // 2.$('span').get(0)
+    </script>
+</body>
+</html>

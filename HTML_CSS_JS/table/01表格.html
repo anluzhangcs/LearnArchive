@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .t1{
+            /* 设置边框线 */
+            border:1px solid red;
+            width: 50%;
+            /* 设置表格内文本居中 */
+            text-align:center;
+            /* 设置表格居中 */
+            margin:0 auto; 
+            /* 合并边框线 */
+            border-collapse: collapse;
+        }
+        td{
+            border:1px solid red;
+           
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- 
+        标签：
+        table 表示表格
+        tr 表示一行
+        td 表示一行的一个单元格
+        属性：
+        
+     -->
+    <table class="t1">
+        <tr>
+            <td>A1</td>
+            <td>B1</td>
+            <td>C1</td>
+            <td>D1</td>
+        </tr>
+        <tr>
+            <td>A2</td>
+            <td>B2</td>
+            <td>C2</td>
+            <!-- 纵向合并单元格 -->
+            <td rowspan="2">D2</td>
+        </tr>
+        <tr>
+            <td>A3</td>
+            <td>B3</td>
+            <td>C3</td>
+            <!-- <td>D3</td> -->
+        </tr>
+        <tr>
+            <td>A4</td>
+            <td>B4</td>
+            <!-- 横向合并单元格 -->
+            <td colspan="2">C4</td>
+            <!-- <td>D4</td> -->
+        </tr>
+    </table>
+</body>
+</html>
